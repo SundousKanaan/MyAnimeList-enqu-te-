@@ -13,7 +13,6 @@ Per anime-serie:
 - Wie is je favoriete character *
 
 
-- Studio(s) die de anime-serie hebben geproduceerd
 - Als hij de studio naam weten
   - ja? vul de studio naam in.
   
