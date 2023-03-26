@@ -1,6 +1,6 @@
 # User story
 
-MyAnimeList - Beoordelingsenquête over favoriete anime-serie
+MyAnimeList - Beoordelingsenquête over anime-serie
 
 Als een anime-fan wil ik een enquête kunnen invullen over mijn favoriete anime-serie met verschillende antwoordmogelijkheden. Ik wil duidelijk zien waar ik ben en hoeveel vragen ik nog moet invullen. Ik wil eerder ingevulde vragen kunnen herzien en eventuele fouten kunnen corrigeren. Als ik de enquête niet afkrijg, wil ik later weer verder kunnen gaan met waar ik gebleven was.
 
