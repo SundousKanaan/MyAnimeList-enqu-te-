@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyAnimeList-enqute</title>
+    <link rel="stylesheet" href="./css/css.css">
 </head>
 
 <body>
@@ -16,81 +17,78 @@
         <div>
             <h2>Sorry, but you cannot send this form without activating JavaScript in your browser.</h2>
             <p>
-                Go to your browser Settings > Privacy and security > Site settings > JavaScript > Sites can use JavaScript
+                Go to your browser Settings > Privacy and security > Site settings > JavaScript > Sites can use
+                JavaScript
             </p>
         </div>
     </header>
     <main>
         <form action="">
-            <ol>
                 <!-- user -->
-                <li id="user-informatie">
-                    <h2>User informatie</h2>
-                    <label>What is your MAL username?</label>
-                    <input type="text" name="user-informatie" id="user-info" required>
+                    <section>
+                        <h2>1. User informatie</h2>
+                        <label>What is your MAL username?</label>
+                        <input type="text" name="user-informatie" id="user-info" required>
 
-                    <br>
-                    <label>
-                        <input type="checkbox" name="next" id="next">
-                        Next question
-                    </label>
-                </li>
+                        <label for="to-serie">
+                            <input type="checkbox" name="to-serie" id="to-serie">
+                            Next question
+                        </label>
+                    </section>
 
                 <!-- anime -->
-                <li id="Anime-serie">
-                    <h2>Anime-serie</h2>
-                    <ol>
-                        <li>
-                            <label for="">What is the anime name?</label>
-                            <input type="text" name="" id="" required>
-                        </li>
-                        <li>
-                            <label for="">Who is your favorite character</label>
-                            <input type="text" name="" id="" required>
-                        </li>
-                    </ol>
+                    <section>
+                        <h2>2. Anime serie</h2>
+                        <ol>
+                            <li>
+                                <label for="anime-name">What is the anime name?</label>
+                                <input type="text" name="anime-name" id="anime-name" required>
+                            </li>
+                            <li>
+                                <label for="favorite-character">Who is your favorite character</label>
+                                <input type="text" name="favorite-character" id="favorite-character" required>
+                            </li>
+                        </ol>
 
-                    <br>
-                    <label>
-                        <input type="checkbox" name="next" id="next">
-                        Next question
-                    </label>
-                </li>
+                        <label for="to-Studio">
+                            <input type="checkbox" name="to-Studio" id="to-Studio">
+                            Next question
+                        </label>
+                    </section>
 
                 <!--  studio  -->
-                <li id="Studio">
-                    <h2>Studio</h2>
-                    <ol>
-                        <li>
-                            <label for="">Do you know who the producing studio is?</label>
-                            <label>
-                                <input type="radio" name="id" required>No</input>
-                            </label>
-                            <label>
-                                <input type="radio" name="id">Yes</input>
-                            </label>
-                        </li>
-                        <li>
-                            <label for="">Yes? Please enter the studio name</label>
-                            <input type="text" name="" id="">
-                        </li>
-                    </ol>
-
-                    <br>
-                    <label>
-                        <input type="checkbox" name="next" id="next">
-                        Next question
-                    </label>
-                </li>
+                    <section>
+                        <h2>3. Studio</h2>
+                        <ol>
+                            <li>
+                                <p>Do you know who the producing studio is?</p>
+                                <label>
+                                    <input type="radio" name="studio" required>No</input>
+                                </label>
+                                <label>
+                                    <input type="radio" name="studio">Yes</input>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="studio-name">Yes? Please enter the studio name</label>
+                                <input type="text" name="studio-name" id="studio-name">
+                            </li>
+                        </ol>
+    
+                        <label for="to-season">
+                            <input type="checkbox" name="to-season" id="to-season">
+                            Next question
+                        </label>
+                    </section>
 
                 <!-- season -->
-                <li id="The season">
-                    <h2>The season</h2>
-                    <p for="">In what season was it broadcast?</p>
-                    <ul>
-                        <li>
-                            <label>
-                                season:
+                    <section>
+                        <h2>4. The season</h2>
+                        <p>In what season was it broadcast?</p>
+                        <ul>
+                            <li>
+                                <p>season:</p>
+
                                 <label>
                                     <input type="radio" name="season" id="Winter">
                                     Winter
@@ -107,270 +105,261 @@
                                     <input type="radio" name="season" id="Fall">
                                     Fall
                                 </label>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                year:
+                            </li>
+                            <li>
+                                <label for="year">year:</label>
                                 <input type="number" name="season" id="year" min="1917" max="2023">
-                            </label>
-                        </li>
-                    </ul>
-
-                    <br>
-                    <label>
-                        <input type="checkbox" name="next" id="next">
-                        Next question
-                    </label>
-
-                    <!-- <p>Note:</p>
-                    <ul>
-                        <li>Winter season: Januari</li>
-                        <li>Spring season: April</li>
-                        <li>Summer season: Juli</li>
-                        <li>Fall season: Oktober</li>
-                    </ul> -->
-                </li>
+                            </li>
+                        </ul>
+    
+                        <br>
+                        <label for="to-rating">
+                            <input type="checkbox" name="to-rating" id="to-rating">
+                            Next question
+                        </label>
+                    </section>
 
                 <!-- ratings -->
-                <li id="General-ratings">
-                    <h2>General ratings</h2>
-                    <ol>
-                        <li>
-                            <p>Storyline (How interesting and engaging is the story?)</p>
-                            <div>
-                                <label> 
-                                    <input type="radio" name="Storyline" id="Storyline1" required>
-                                    1
-                                </label>
 
-                                <label> 
-                                    <input type="radio" name="Storyline" id="Storyline2">
-                                    2
-                                </label>
+                    <section>
+                        <h2>5. General rating</h2>
+                        <ol>
+                            <li>
+                                <p>Storyline (How interesting and engaging is the story?)</p>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="Storyline" id="Storyline1" required>
+                                        1
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Storyline" id="Storyline2">
+                                        2
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Storyline" id="Storyline3">
+                                        3
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Storyline" id="Storylin4">
+                                        4
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Storyline" id="Storyline5">
+                                        5
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Storyline" id="Storyline6">
+                                        6
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Storyline" id="Storyline7">
+                                        7
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Storyline" id="Storyline8">
+                                        8
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Storyline" id="Storyline9">
+                                        9
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Storyline" id="Storyline10">
+                                        10
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Main characters (How well developed are the characters?)</p>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="characters" id="characters1" required>
+                                        1
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="characters" id="characters2">
+                                        2
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="characters" id="characters3">
+                                        3
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="characters" id="characters4">
+                                        4
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="characters" id="characters5">
+                                        5
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="characters" id="characters6">
+                                        6
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="characters" id="characters7">
+                                        7
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="characters" id="characters8">
+                                        8
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="characters" id="characters9">
+                                        9
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="characters" id="characters10">
+                                        10
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Animation (How high quality is the animation?)</p>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="Animation" id="Animation1" required>
+                                        1
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Animation" id="Animation2">
+                                        2
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Animation" id="Animation3">
+                                        3
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Animation" id="Animation4">
+                                        4
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Animation" id="Animation5">
+                                        5
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Animation" id="Animation6">
+                                        6
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Animation" id="Animation7">
+                                        7
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Animation" id="Animation8">
+                                        8
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Animation" id="Animation9">
+                                        9
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Animation" id="Animation10">
+                                        10
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Music (How well the music fits the series?)</p>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="Music" id="Music1" required>
+                                        1
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Music" id="Music2">
+                                        2
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Music" id="Music3">
+                                        3
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Music" id="Music4">
+                                        4
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Music" id="Music5">
+                                        5
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Music" id="Music6">
+                                        6
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Music" id="Music7">
+                                        7
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Music" id="Music8">
+                                        8
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Music" id="Music9">
+                                        9
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="Music" id="Music10">
+                                        10
+                                    </label>
+                                </div>
+                            </li>
+                        </ol>
+                    </section>
 
-                                <label> 
-                                    <input type="radio" name="Storyline" id="Storyline3">
-                                    3
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Storyline" id="Storylin4">
-                                    4
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Storyline" id="Storyline5">
-                                    5
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Storyline" id="Storyline6">
-                                    6
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Storyline" id="Storyline7">
-                                    7
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Storyline" id="Storyline8">
-                                    8
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Storyline" id="Storyline9">
-                                    9
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Storyline" id="Storyline10">
-                                    10
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <p>Main characters (How well developed are the characters?)</p>
-                            <div>
-                                <label>
-                                    <input type="radio" name="characters" id="characters1" required>
-                                    1
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="characters" id="characters2">
-                                    2
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="characters" id="characters3">
-                                    3
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="characters" id="characters4">
-                                    4
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="characters" id="characters5">
-                                    5
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="characters" id="characters6">
-                                    6
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="characters" id="characters7">
-                                    7
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="characters" id="characters8">
-                                    8
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="characters" id="characters9">
-                                    9
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="characters" id="characters10">
-                                    10
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <p>Animation (How high quality is the animation?)</p>
-                            <div>
-                                <label> 
-                                    <input type="radio" name="Animation" id="Animation1" required>
-                                    1
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Animation" id="Animation2">
-                                    2
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Animation" id="Animation3">
-                                    3
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Animation" id="Animation4">
-                                    4
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Animation" id="Animation5">
-                                    5
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Animation" id="Animation6">
-                                    6
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Animation" id="Animation7">
-                                    7
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Animation" id="Animation8">
-                                    8
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Animation" id="Animation9">
-                                    9
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Animation" id="Animation10">
-                                    10
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <p>Music (How well the music fits the series?)</p>
-                            <div>
-                                <label> 
-                                    <input type="radio" name="Music" id="Music1" required>
-                                    1
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Music" id="Music2">
-                                    2
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="Music" id="Music3">
-                                    3
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Music" id="Music4">
-                                    4
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Music" id="Music5">
-                                    5
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Music" id="Music6">
-                                    6
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Music" id="Music7">
-                                    7
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Music" id="Music8">
-                                    8
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Music" id="Music9">
-                                    9
-                                </label>
-
-                                <label> 
-                                    <input type="radio" name="Music" id="Music10">
-                                    10
-                                </label>
-                            </div>
-                        </li>
-                    </ol>
-                </li>
-            </ol>
             <input type="submit" value="Submit">
         </form>
     </main>
-    <footer>
-        <p>Made by Sundous Kanaan | Browser-technologies-2223</p>
-    </footer>
 
     <nav>
-        <ul>
+        <ol>
             <li><a href="#user-informatie">question 1</a></li>
             <li><a href="#Anime-serie">question 2</a></li>
             <li><a href="#Studio">question 3</a></li>
             <li><a href="#The-season">question 4</a></li>
             <li><a href="#General-ratings">question 5</a></li>
-        </ul>
+        </ol>
     </nav>
+
+    <footer>
+        <p>Made by Sundous Kanaan | Browser-technologies-2223</p>
+    </footer>
 </body>
 
 </html>
