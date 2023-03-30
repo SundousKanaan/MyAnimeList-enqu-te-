@@ -1,18 +1,17 @@
-// info 
-// const userName = document.getElementById("user-info");
+const formInputs = document.querySelectorAll('input[type="text"]');
+function saveFormInputsToLocal() {
+    // Loop over each form input and save its value to local storage
+    formInputs.forEach(input => {
+        const inputName = input.name; // Get the name of the input element
+        const inputValue = input.value; // Get the current value of the input element
+        localStorage.setItem(inputName, inputValue); // Save the input value in local storage
+    });
+}
 
-// if (userName) {
-//     userName.oninput = function (e) {
-//         localStorage.setItem("firstName", userName.value);
-//     }
-// }
-
-// Get all form inputs on the page
-const formInputs = document.querySelectorAll('input[type=text]');
-
-// Loop over each form input and save its value to local storage
+// Add event listeners to each input field
 formInputs.forEach(input => {
-  const inputName = input.name; // Get the name of the input element
-  const inputValue = input.value; // Get the current value of the input element
-  localStorage.setItem(inputName, inputValue); // Save the input value in local storage
+    input.addEventListener('input', saveFormInputsToLocal);
 });
+
+// Call the function once on page load to save initial values
+saveFormInputsToLocal();
