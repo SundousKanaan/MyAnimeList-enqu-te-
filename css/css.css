@@ -141,6 +141,10 @@ main form section:nth-of-type(3):has(input[value=Yes]:checked) ol li:last-child 
     display: block;
 }
 
+main form section:nth-of-type(3) ol li:last-child span{
+    margin-top: 2%;
+}
+
 main form section h2 {
     width: 90%;
     margin: 5% 0;
