@@ -9,18 +9,52 @@
 
 html {
     scroll-behavior: smooth;
-    /* scroll-margin-top: .5em; */
 }
 
-:root{
-    --background-body:rgb(255, 231, 211);
-    --background-section: rgb(155, 229, 195);
-    --background-Js-note: red;
-    --h2-titels:rgb(0, 26, 255);
-    --border-color: black;
+
+
+:root {
+    --background-body: #e3f1ff;
+    --background-section: #89bff8;
+    --background-Js-note: rgb(255, 89, 89);
+    --h1-titel: #0051a2;
+    --h2-titel: #120172;
+    --label-p-text-color:rgb(2, 0, 114);
+    --nav-color: #120172;
+    --nav-button: #89bff8;
+    --border-color: #1b75be;
+    --section-shadow: #120172;
+    --re-sub-color: white;
+
+    --focus-input: #120172;
+    --focus-boxshadow: 0 0 0 .2em var(--focus-input);
+    --wrong-invalid-border: rgb(161, 0, 0);
+    --good-valid-border: rgb(0, 134, 0);
+
+    --on-active-button: #e3f1ff;
+    --checked-radioButton: #2171b5;
+    --checked-button: #0051a2;
+    --hover-button: rgb(0, 204, 255);
+    --active-button: blue;
+    --submit-button: rgb(12, 160, 25);
+    --next-buttons-background: #e3f1ff;
 }
 
-body{
+@media (prefers-color-scheme: dark){
+    :root{
+        --background-body: #08306b;
+        --h1-titel: #e3f1ff;
+        --nav-color: #ffffff;
+        --nav-button: #107ab8;
+        --section-shadow: #1b75be;
+    }
+}
+
+p:not(footer p),label:not(section>label:last-of-type):not(input[type=radio]){
+    color: var(--label-p-text-color);
+}
+
+body {
     width: 100%;
     height: fit-content;
     background-color: var(--background-body);
@@ -30,43 +64,56 @@ body{
     align-items: center;
 }
 
-header{
-    width: 90%;
-    /* background-color: aquamarine; */
-    margin-bottom: 1em;
+header {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-body);
 }
 
-header > *{
-    width: 100%;
+header>* {
     text-align: center;
 }
 
-header h1{
-    width: 100%;
+header h1 {
+    width: 90%;
     height: fit-content;
     padding: .5em 0;
-    margin-bottom: .5em;
-
-    /* background-color: aquamarine; */
     border-bottom: solid 1px var(--border-color);
+    color: var(--h1-titel);
 }
 
-header div{
+header div {
+    width: 90vw;
     background-color: var(--background-Js-note);
     border-radius: 1em;
-    padding: .5em 0;
+    padding: .5em;
+    margin-top: .5em;
+
+    display: none;
+}
+
+header div.nojs {
+    display: block;
 }
 
 
 
-main{
+
+/* the form */
+main {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 4em;
 }
 
-main form{
-    width: 80%;
+main form {
+    width: 100%;
     height: 100%;
 
     display: flex;
@@ -74,80 +121,661 @@ main form{
     align-items: center;
 }
 
-
-main form section{
-    width: 100%;
-    min-height: 20em;
-    max-height: fit-content;
-    margin-bottom: 1em;
+main form section {
+    width: 50vw;
+    height: fit-content;
+    margin-bottom: 2em;
 
     background-color: var(--background-section);
     border-radius: 1em;
+    box-shadow: 0 0 .5em var(--section-shadow);
+
+    scroll-margin-top: 10em;
 }
 
-main form section h2{
+main form section:nth-of-type(3) ol li:last-child {
+    display: none;
+}
+
+main form section:nth-of-type(3):has(input[value=Yes]:checked) ol li:last-child {
+    display: block;
+}
+
+main form section h2 {
     width: 90%;
     margin: 5% 0;
+    padding-bottom: 1%;
     align-self: center;
 }
 
 main form section p,
-main form section label{
-    margin: 5% 0% 5% 5%; 
+main form section label {
+    margin: 2% 5% 2% 5%;
 }
+
+
+
+
+
+/* next checkboxes */
+main form section>label:last-of-type {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2%;
+
+    cursor: pointer;
+    background-color: var(--on-active-button);
+    border-radius: .6em;
+
+    position: relative;
+}
+
+main form section>label:last-of-type:hover {
+    background-color: var(--hover-button);
+}
+
+main form section>label:last-of-type:active {
+    background-color: var(--active-button);
+}
+
+main form section>label:last-of-type:focus-within {
+    box-shadow: var(--focus-boxshadow);
+}
+
+main form section>label:last-of-type input {
+    opacity: 0;
+    position: absolute;
+}
+
+main form section:has(input[type=checkbox]:last-of-type:checked)>label:last-of-type {
+    background-color: var(--checked-button);
+    color: var(--next-buttons-background);
+}
+
+
+main form input[type=text],
+main form input[type=number] {
+    appearance: none;
+    -webkit-appearance: none;
+
+    --width: 100%;
+    width: var(--width);
+    height: 3em;
+
+    border: none;
+    border-radius: .6em;
+    padding-left: 2%;
+
+    box-shadow: 0 0 0 .2em var(--background-section);
+}
+
+main form span {
+    --width: 60%;
+    width: var(--width);
+    height: 3em;
+    display: block;
+    position: relative;
+}
+
+main form section:first-of-type span {
+    --width: 55%;
+    margin-left: 5%;
+}
+
+main form span:has(input[type=text]:invalid)::after {
+    content: "You can only use: a-z|A-Z|0-9|_|-";
+    display: block;
+    font-size: 1.5vw;
+    color: var(--wrong-invalid-border);
+    --width: 60%;
+    width: var(--width);
+    height: 2vw;
+    position: absolute;
+    right: calc(-1 * var(--width) - 5%);
+    top: 0;
+
+    word-wrap: break-word;
+}
+
+main form section:first-of-type span:has(input[type=text]:invalid)::after {
+    --width: 45%;
+    font-size: 2.5vw;
+}
+
+@media (min-width: 570px) {
+    main form section:first-of-type span {
+        --width: 55%;
+    }
+
+    main form section:first-of-type span:has(input[type=text]:invalid)::after {
+        --width: 55%;
+        font-size: 2vw;
+    }
+}
+
+@media (min-width: 920px) {
+    main form section:first-of-type span:has(input[type=text]:invalid)::after {
+        font-size: 1.5vw;
+    }
+}
+
+@media (min-width: 1313px) {
+    main form section:first-of-type span {
+        --width: 50%;
+    }
+
+    main form section:first-of-type span:has(input[type=text]:invalid)::after {
+        --width: 80%;
+    }
+}
+
+
+
+
+main form span:has(input[type=text]:valid)::after {
+    content: "👍";
+    display: block;
+    --width: 4vw;
+    font-size: var(--width);
+    width: var(--width);
+    height: var(--width);
+    position: absolute;
+    right: calc(-1 * var(--width) - 1vw);
+    top: calc(50% - var(--width));
+}
+
+main form input[type=text]:invalid {
+    box-shadow: 0 0 0 .2em var(--wrong-invalid-border);
+}
+
+main form input[type=text]:valid {
+    box-shadow: 0 0 0 .2em var(--good-valid-border);
+}
+
+main form input[type=text]:focus,
+main form input[type=number]:focus,
+main form input[type=radio]:focus {
+    outline: none;
+    box-shadow: var(--focus-boxshadow);
+}
+
 
 main form section,
 main form ol li,
-main form ul li{
+main form ul li {
     display: flex;
     flex-direction: column;
     align-items: start;
 }
 
-main form section h2{
+main form section h2 {
     height: fit-content;
     border-bottom: solid 1px var(--border-color);
+    color: var(--h2-titel);
 }
 
- 
-/* main form ol,
-main form ul{
-    padding-left: 2em;
-} */
+
+main form ol,
+main form ul {
+    width: 100%;
+    /* padding-left: 2em; */
+}
 
 main form ol li,
-main form ul li{
-    margin: 0 1em ;
+main form ul li {
+    margin: 0 1em;
 }
 
-body > nav{
-    width: 90%;
-    height: 3em;
-
-    margin-top: .5em;
-    border-top: solid 1px var(--border-color);
-    display: flex;
+main form ol li:last-child {
+    margin-bottom: 2%;
 }
 
-body > nav ol{
+main form ol li div {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+main form ol li div label {
+    width: fit-content;
+    margin: 2%;
+}
+
+form div:has(input[type=radio]){
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .6em;
+    margin-bottom: 2%;
+}
+
+
+main form section input[type=radio]{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    opacity: 0;
+    position: absolute;
+    left: -100vw;
+}
+
+main form section label:has(input[type=radio]){
+    width: 10vw;
+    height: fit-content;
+    padding: 2%;
+    border-radius: .5em;
+    margin: 0;
+    text-align: center;
+
+    background-color: var(--on-active-button);
+    cursor: pointer;
+
+}
+
+main form section label:has(input[type=radio]:checked){
+    color: var(--next-buttons-background) ;
+    background-color: var(--checked-radioButton);
+}
+
+main form section label:has(input[type=radio]:focus){
+    box-shadow: var(--focus-boxshadow);
+}
+
+
+/* rating colors */
+main form section label:has(input[id=Storyline1]),
+main form section label:has(input[id=characters1]),
+main form section label:has(input[id=Animation1]),
+main form section label:has(input[id=Music1]){
+    background-color: #33FF00;
+}
+
+main form section label:has(input[id=Storyline1]):hover,
+main form section label:has(input[id=characters1]):hover,
+main form section label:has(input[id=Animation1]):hover,
+main form section label:has(input[id=Music1]):hover{
+    background-color: #2CDE00;
+}
+
+main form section label:has(input[id=Storyline2]),
+main form section label:has(input[id=characters2]),
+main form section label:has(input[id=Animation2]),
+main form section label:has(input[id=Music2]){
+    background-color: #66FF00;
+}
+
+main form section label:has(input[id=Storyline2]):hover,
+main form section label:has(input[id=characters2]):hover,
+main form section label:has(input[id=Animation2]):hover,
+main form section label:has(input[id=Music2]):hover{
+    background-color: #59DE00;
+}
+
+main form section label:has(input[id=Storyline3]),
+main form section label:has(input[id=characters3]),
+main form section label:has(input[id=Animation3]),
+main form section label:has(input[id=Music3]){
+    background-color: #99FF00;
+}
+
+main form section label:has(input[id=Storyline3]):hover,
+main form section label:has(input[id=characters3]):hover,
+main form section label:has(input[id=Animation3]):hover,
+main form section label:has(input[id=Music3]):hover{
+    background-color: #85DE00;
+}
+
+main form section label:has(input[id=Storyline4]),
+main form section label:has(input[id=characters4]),
+main form section label:has(input[id=Animation4]),
+main form section label:has(input[id=Music4]){
+    background-color: #CCFF00;
+}
+
+main form section label:has(input[id=Storyline4]):hover,
+main form section label:has(input[id=characters4]):hover,
+main form section label:has(input[id=Animation4]):hover,
+main form section label:has(input[id=Music4]):hover{
+    background-color: #CCFF00;
+}
+
+main form section label:has(input[id=Storyline5]),
+main form section label:has(input[id=characters5]),
+main form section label:has(input[id=Animation5]),
+main form section label:has(input[id=Music5]){
+    background-color: #FFFF00;
+}
+
+main form section label:has(input[id=Storyline5]):hover,
+main form section label:has(input[id=characters5]):hover,
+main form section label:has(input[id=Animation5]):hover,
+main form section label:has(input[id=Music5]):hover{
+    background-color: #DEDE00;
+}
+
+main form section label:has(input[id=Storyline6]),
+main form section label:has(input[id=characters6]),
+main form section label:has(input[id=Animation6]),
+main form section label:has(input[id=Music6]){
+    background-color: #FFCC00;
+}
+
+main form section label:has(input[id=Storyline6]):hover,
+main form section label:has(input[id=characters6]):hover,
+main form section label:has(input[id=Animation6]):hover,
+main form section label:has(input[id=Music6]):hover{
+    background-color: #DEB100;
+}
+
+main form section label:has(input[id=Storyline7]),
+main form section label:has(input[id=characters7]),
+main form section label:has(input[id=Animation7]),
+main form section label:has(input[id=Music7]){
+    background-color: #FF9900;
+}
+
+main form section label:has(input[id=Storyline7]):hover,
+main form section label:has(input[id=characters7]):hover,
+main form section label:has(input[id=Animation7]):hover,
+main form section label:has(input[id=Music7]):hover{
+    background-color: #DE8500;
+}
+
+main form section label:has(input[id=Storyline8]),
+main form section label:has(input[id=characters8]),
+main form section label:has(input[id=Animation8]),
+main form section label:has(input[id=Music8]){
+    background-color: #FF6600;
+}
+
+main form section label:has(input[id=Storyline8]):hover,
+main form section label:has(input[id=characters8]):hover,
+main form section label:has(input[id=Animation8]):hover,
+main form section label:has(input[id=Music8]):hover{
+    background-color: #DE5900;
+}
+
+main form section label:has(input[id=Storyline9]),
+main form section label:has(input[id=characters9]),
+main form section label:has(input[id=Animation9]),
+main form section label:has(input[id=Music9]){
+    background-color: #FF3300;
+}
+
+main form section label:has(input[id=Storyline9]):hover,
+main form section label:has(input[id=characters9]):hover,
+main form section label:has(input[id=Animation9]):hover,
+main form section label:has(input[id=Music9]):hover{
+    background-color: #DE2C00;
+}
+
+main form section label:has(input[id=Storyline10]),
+main form section label:has(input[id=characters10]),
+main form section label:has(input[id=Animation10]),
+main form section label:has(input[id=Music10]){
+    background-color: #FF0000;
+}
+
+main form section label:has(input[id=Storyline10]):hover,
+main form section label:has(input[id=characters10]):hover,
+main form section label:has(input[id=Animation10]):hover,
+main form section label:has(input[id=Music10]):hover{
+    background-color: #DE0000;
+}
+
+
+
+
+
+
+/* form comands */
+
+form>div {
+    width: 50vw;
+    height: 5vw;
+
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+
+}
+
+form>div input {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 50%;
+    height: 100%;
+
+    border: none;
+    border-radius: .6em;
+
+    cursor: pointer;
+    color: var(--re-sub-color);
+
+    box-shadow: 0 0 0 .15em var(--background-section);
+    background-color: var(--nav-button);
+}
+
+form>div input[type=submit] {
+    display: none;
+}
+
+form:has(input[required]:valid):has(input[required]:checked)>div input[type=submit]:hover,
+form:has(input:valid):has(input:checked)>div input[type=reset]:hover,
+form>div input:hover {
+    background-color: var(--hover-button);
+}
+
+form:has(input:valid):has(input:checked)>div input[type=reset] {
+    background-color: var(--active-button);
+}
+
+
+form:valid>div input[type=submit] {
+    display: block;
+    background-color: var(--submit-button);
+}
+
+
+
+
+
+
+
+/* the form nav */
+body main>nav {
+    width: 90%;
+    height: 7vw;
+
+    margin: 3% 0;
+    background-color: var(--background-body);
+    display: flex;
+    order: -100;
+
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+body main>nav::before {
+    content: "";
+    width: 100%;
+    height: 1vw;
+    display: block;
+    background-color: inherit;
+    position: absolute;
+    top: 100%;
+}
+
+body main>nav ol {
+    width: 100%;
+    height: 80%;
     align-self: center;
     display: flex;
     justify-content: space-around;
+
+    list-style: none;
 }
 
-footer{
+body main>nav ol li {
+    width: 15vw;
+    height: inherit;
+    border-radius: .6em;
+
+    position: relative;
+    align-self: center;
+}
+
+body main>nav ol li:not(:first-child)::before {
+    content: attr(data-name);
+    width: 100%;
+    height: 100%;
+    border: solid .15em var(--border-color);
+    border-radius: .6em;
+    background-color: var(--background-body);
+
+    color: var(--nav-color);
+    font-size: 2vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body main>nav ol li a {
+    width: 100%;
+    height: 100%;
+    border-radius: .6em;
+
+    font-size: 2vw;
+    text-decoration: none;
+    color: var(--nav-color);
+    background-color: var(--nav-button);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body main>nav ol li a:target{
+    box-shadow: 0 0 1em red;
+}
+
+body main>nav ol li a:hover {
+    color: var(--nav-color);
+    background-color: var(--hover-button);
+}
+
+body main>nav ol li a:active {
+    color: var(--next-buttons-background);
+    background-color: var(--active-button);
+}
+
+body main>nav ol li a:focus {
+    outline: none;
+    box-shadow: var(--focus-boxshadow);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* form actions */
+/* ************ */
+
+main form section:first-of-type:has(input[required]:valid)>label:last-of-type {
+    display: block;
+}
+
+
+
+/* next checked */
+main form section:not(:first-of-type) {
+    display: none;
+}
+
+
+/* section 2 */
+main form section:nth-of-type(2):has(input[required]:valid)>label:last-of-type {
+    display: block;
+}
+
+main form:has(input[name=to-serie]:checked) section:nth-of-type(2) {
+    display: flex;
+}
+
+main:has(input[name=to-serie]:checked) nav ol li:nth-of-type(2)::before {
+    display: none;
+}
+
+/* section 3 */
+main form section:nth-of-type(3):has(input[required]:valid)>label:last-of-type {
+    display: block;
+}
+
+main form:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked) section:nth-of-type(3) {
+    display: flex;
+}
+
+main:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked) nav ol li:nth-of-type(3)::before {
+    display: none;
+}
+
+/* section 4 */
+main form section:nth-of-type(4):has(input[type=radio]:checked):has(input[type=number]:valid)>label:last-of-type {
+    display: block;
+}
+
+main form:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked) section:nth-of-type(4) {
+    display: flex;
+}
+
+main:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked) nav ol li:nth-of-type(4)::before {
+    display: none;
+}
+
+/* section 5 */
+main form:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked):has(input[name=to-rating]:checked) section:nth-of-type(5) {
+    display: flex;
+}
+
+main:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked):has(input[name=to-rating]:checked) nav ol li:nth-of-type(5)::before {
+    display: none;
+}
+
+
+/* footer */
+footer {
     width: 90%;
     height: 3em;
 
     display: flex;
 
     border-top: solid 1px var(--border-color);
+    position: fixed;
+    bottom: 0;
+    background-color: var(--background-body);
 }
 
-footer p{
+footer p {
     width: 100%;
     height: fit-content;
     text-align: center;
     align-self: center;
+    color: var(--h1-titel);
 }
