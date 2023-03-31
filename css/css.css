@@ -861,7 +861,7 @@ background-color: var(--nav-button);
 
 @media (min-width: 800px){
     main form{
-        margin-top: 1vw ;
+        margin-top: 2vw ;
     }
     main.carousel form{
         width: 40vw;
@@ -887,6 +887,7 @@ background-color: var(--nav-button);
         width:50%;
         height: 5vw;
         margin: 0;
+        left: calc(50% - 50%/2);
     }
 
     main>nav ol li a,
