@@ -87,7 +87,12 @@ const Back = document.querySelector('main.carousel > div button:first-of-type');
 const Next = document.querySelector('main.carousel > div button:last-of-type');
 const fieldsets = document.querySelectorAll('main.carousel form fieldset');
 const questionsProces = document.querySelectorAll("body main>nav ol li");
-const FinishButtons = document.querySelectorAll('main.carousel form fieldset section > label:last-of-type input');
+const nextButtons = document.querySelectorAll('main.carousel form fieldset section > label:last-of-type');
+
+nextButtons.forEach(nextButton => {
+    nextButton.classList.add('hidden');
+});
+
 
 let i = 1;
 
@@ -98,10 +103,6 @@ questionsProces.forEach(questionProces => {
 });
 
 // console.log(FinishButtons);
-
-// FinishButtons.forEach(FinishButton => {
-//     FinishButton.textContent='Finish';
-// });
 
 
 let currentFieldset = 0;
@@ -130,11 +131,25 @@ Back.addEventListener('click', () => {
     }
 });
 
+const inputs = document.querySelectorAll('main.carousel form fieldset section input[required]');
+console.log(inputs);
+
+function check(currentFieldset) {
+    if (fieldsets[currentFieldset]) {
+        console.log(fieldsets[currentFieldset].childNodes[1]);
+        console.log("hiiii", currentFieldset);
+    } else {
+        console.log("NEEEE");
+    }
+}
+
+check(currentFieldset); 
+
 Next.addEventListener('click', () => {
     if (currentFieldset < fieldsets.length - 1) {
         fieldsets[currentFieldset].classList.remove('nextQuestion');
         fieldsets[currentFieldset].classList.add('backQuestion');
-
+        check(currentFieldset);
         currentFieldset++;
         fieldsets[currentFieldset].classList.add('nextQuestion');
         questionsProces[currentFieldset].classList.add('next');
@@ -144,42 +159,4 @@ Next.addEventListener('click', () => {
         Back.classList.remove("hidden");
     }
 
-
 });
-
-
-function saveFormfFinishToLocal() {
-    FinishButtons.forEach(FinishButton => {
-        let inputName = FinishButton.name;
-        let inputValue = FinishButton.value;
-
-        // If the checkbox is checked, display the output text
-        if (FinishButton.checked == true) {
-            console.log(FinishButton, "checked");
-            localStorage.setItem(inputName, inputValue);
-        } else {
-            console.log("not checked");
-            localStorage.setItem(inputName, "off");
-        }
-    });
-}
-
-function loadFormFinishFromLocal() {
-    FinishButtons.forEach(FinishButton => {
-        let inputName = FinishButton.name;
-        let storedValue = localStorage.getItem(inputName);
-
-        if (storedValue && FinishButton.value === storedValue) {
-            FinishButton.checked = true;
-        } else {
-            FinishButton.checked = false;
-        }
-    });
-}
-
-FinishButtons.forEach(FinishButton => {
-    FinishButton.addEventListener('change', saveFormfFinishToLocal);
-});
-
-loadFormFinishFromLocal();
-

@@ -76,6 +76,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    overflow-x: hidden;
 }
 
 header {
@@ -151,12 +153,12 @@ main form section {
     scroll-margin-top: 10em;
 }
 
-main form section:nth-of-type(3) ol li:last-child {
+main form fieldset:nth-of-type(3) section ol li:last-child {
     display: none;
 }
 
-main form section:nth-of-type(3):has(input[value=Yes]:checked) ol li:last-child {
-    display: block;
+main form fieldset:nth-of-type(3):has(input[value=Yes]:checked) section ol li:last-child {
+    display: flex;
 }
 
 main form section:nth-of-type(3) ol li:last-child span{
@@ -350,9 +352,13 @@ main form ul li {
     margin: 0 1em;
 }
 
-main form ol li:last-child {
-    margin-bottom: 2%;
+main form ul li:last-child{
+    margin-bottom: 2% ;
 }
+
+/* main form ol li:last-child {
+    margin-bottom: 2%;
+} */
 
 main form ol li div {
     width: 100%;
@@ -744,13 +750,12 @@ footer p {
 /* main with JavaScript */
 main.carousel{
     position: relative;
-    overflow: hidden;
-    height: 90vh;
+    /* height: fit-content; */
 }
 
 main.carousel form{
     width: 80vw;
-    height: 40vh;
+    /* height:auto; */
     display: block;
     align-self: center;
 
@@ -760,14 +765,24 @@ main.carousel form{
 
 main.carousel form section{
     width: 80vw;
+
 }
 
 main.carousel form>div{
-    width: 70vw;
-    height: 10vw;
-    position: fixed;
-    bottom: 8vh;
-    left: calc(50% - 70vw/2);
+    width: 17vw;
+    height: fit-content;
+    position: absolute;
+    top: -13vh;
+    left: calc(50% - 17vw/2);
+    z-index: 100000;
+
+    background-color: red;
+}
+
+main.carousel form>div input{
+    --width:10vw;
+    width: var(--width);
+    height: calc(var(--width)/4);
 }
 
 main.carousel form fieldset{
@@ -804,7 +819,7 @@ main.carousel > div{
 main.carousel > div button{
     --width:15vw;
     width: var(--width);
-    height: calc(var(--width)/2);
+    height: calc(var(--width)/4);
     cursor: pointer;
 }
 
@@ -840,14 +855,11 @@ main.carousel>nav ol li.next{
 background-color: var(--nav-button);
 }
 
-/* main.carousel:has(input[name=to-serie]:checked) > div button:last-of-type{ */
-/* main.carousel:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked) > div button:last-of-type{ */
-/* main.carousel:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked) > div button:last-of-type, */
-/* main.carousel:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked):has(input[name=to-rating]:checked) > div button:last-of-type{ */
-    /* visibility: visible; */
-/* } */
 
-
+main.carousel form section>label:last-of-type {
+    position: absolute;
+    top: -200vw;
+}
 
 .visible{
     visibility: visible;
@@ -856,6 +868,7 @@ background-color: var(--nav-button);
 .hidden{
     visibility: hidden;
 }
+
 
 
 
@@ -882,13 +895,16 @@ background-color: var(--nav-button);
         height: 3vw;
     }
 
-    main>nav,
-    main.carousel form> div{
+    main>nav{
         width:50%;
         height: 5vw;
         margin: 0;
         left: calc(50% - 50%/2);
     }
+
+    main.carousel form> div button{
+    --width:10vw;
+}
 
     main>nav ol li a,
     main>nav ol li:not(:first-child)::before{
