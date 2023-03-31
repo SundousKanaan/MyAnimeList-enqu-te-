@@ -16,7 +16,8 @@ html {
 :root {
     --background-body: #e3f1ff;
     --background-section: #89bff8;
-    --background-Js-note: rgb(255, 89, 89);
+    /* --background-Js-note: rgb(255, 89, 89); */
+    --background-Js-note: #89bff8;
     --h1-titel: #0051a2;
     --h2-titel: #120172;
     --label-p-text-color:rgb(2, 0, 114);
@@ -24,6 +25,7 @@ html {
     --nav-button: #89bff8;
     --border-color: #1b75be;
     --section-shadow: #120172;
+    --target-shadow: #08306b;
     --re-sub-color: white;
 
     --focus-input: #120172;
@@ -44,11 +46,23 @@ html {
     :root{
         --background-body: #08306b;
         --h1-titel: #e3f1ff;
+        --background-Js-note: #e3f1ff;
+
         --nav-color: #ffffff;
         --nav-button: #107ab8;
         --section-shadow: #1b75be;
+        --target-shadow: #ffffff;
     }
 }
+
+section:target{
+    box-shadow: 0 0 0 .5vw var(--target-shadow);
+    --background-section: #08306b;
+    --h2-titel: #e3f1ff;
+    --label-p-text-color: #e3f1ff;
+    --checked-button: #1b75be;
+}
+
 
 p:not(footer p),label:not(section>label:last-of-type):not(input[type=radio]){
     color: var(--label-p-text-color);
@@ -92,11 +106,11 @@ header div {
     padding: .5em;
     margin-top: .5em;
 
-    display: none;
+    display: block;
 }
 
-header div.nojs {
-    display: block;
+body:has(main.carousel) header div {
+    display: none;
 }
 
 
@@ -119,6 +133,10 @@ main form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+main form fieldset{
+    border: none;
 }
 
 main form section {
@@ -627,7 +645,7 @@ body main>nav ol {
     list-style: none;
 }
 
-body main>nav ol li {
+main>nav ol li {
     width: 15vw;
     height: inherit;
     border-radius: .6em;
@@ -636,7 +654,7 @@ body main>nav ol li {
     align-self: center;
 }
 
-body main>nav ol li:not(:first-child)::before {
+main>nav ol li:not(:first-child)::before {
     content: attr(data-name);
     width: 100%;
     height: 100%;
@@ -655,7 +673,8 @@ body main>nav ol li:not(:first-child)::before {
     left: 0;
 }
 
-body main>nav ol li a {
+
+main>nav ol li a {
     width: 100%;
     height: 100%;
     border-radius: .6em;
@@ -670,97 +689,23 @@ body main>nav ol li a {
     align-items: center;
 }
 
-body main>nav ol li a:target{
-    box-shadow: 0 0 1em red;
-}
-
-body main>nav ol li a:hover {
+main>nav ol li a:hover {
     color: var(--nav-color);
     background-color: var(--hover-button);
 }
 
-body main>nav ol li a:active {
+main>nav ol li a:active {
     color: var(--next-buttons-background);
     background-color: var(--active-button);
 }
 
-body main>nav ol li a:focus {
+main>nav ol li a:focus {
     outline: none;
     box-shadow: var(--focus-boxshadow);
 }
 
 
 
-
-
-
-
-
-
-
-
-/* form actions */
-/* ************ */
-
-main form section:first-of-type:has(input[required]:valid)>label:last-of-type {
-    display: block;
-}
-
-
-
-/* next checked */
-main form section:not(:first-of-type) {
-    display: none;
-}
-
-
-/* section 2 */
-main form section:nth-of-type(2):has(input[required]:valid)>label:last-of-type {
-    display: block;
-}
-
-main form:has(input[name=to-serie]:checked) section:nth-of-type(2) {
-    display: flex;
-}
-
-main:has(input[name=to-serie]:checked) nav ol li:nth-of-type(2)::before {
-    display: none;
-}
-
-/* section 3 */
-main form section:nth-of-type(3):has(input[required]:valid)>label:last-of-type {
-    display: block;
-}
-
-main form:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked) section:nth-of-type(3) {
-    display: flex;
-}
-
-main:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked) nav ol li:nth-of-type(3)::before {
-    display: none;
-}
-
-/* section 4 */
-main form section:nth-of-type(4):has(input[type=radio]:checked):has(input[type=number]:valid)>label:last-of-type {
-    display: block;
-}
-
-main form:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked) section:nth-of-type(4) {
-    display: flex;
-}
-
-main:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked) nav ol li:nth-of-type(4)::before {
-    display: none;
-}
-
-/* section 5 */
-main form:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked):has(input[name=to-rating]:checked) section:nth-of-type(5) {
-    display: flex;
-}
-
-main:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked):has(input[name=to-rating]:checked) nav ol li:nth-of-type(5)::before {
-    display: none;
-}
 
 
 /* footer */
@@ -782,4 +727,214 @@ footer p {
     text-align: center;
     align-self: center;
     color: var(--h1-titel);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* main with JavaScript */
+main.carousel{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+main.carousel form{
+    width: 80vw;
+    height: 40vh;
+    display: block;
+    align-self: center;
+
+    position: relative;
+    margin-top: 10%;
+}
+
+main.carousel form section{
+    width: 80vw;
+}
+
+main.carousel form>div{
+    width: 70vw;
+    height: 10vw;
+    position: fixed;
+    bottom: 8vh;
+    left: calc(50% - 70vw/2);
+}
+
+main.carousel form fieldset{
+    position: absolute;
+    top: 0;
+    transition: .5s;
+}
+
+main.carousel form fieldset:not(:first-of-type){
+    display: block;
+    right: -100vw;
+}
+
+main.carousel form fieldset.backQuestion{
+    right: 200vw;
+}
+
+main.carousel form fieldset.nextQuestion{
+    display: block;
+    right: 0;
+}
+
+main.carousel > div{
+    width: 80vw;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: absolute;
+    top: 13vw;
+
+}
+
+main.carousel > div button{
+    --width:15vw;
+    width: var(--width);
+    height: calc(var(--width)/2);
+    cursor: pointer;
+}
+
+/* main.carousel > div button:last-of-type{
+    visibility: hidden;
+} */
+
+main.carousel > div button:first-of-type{
+    cursor: pointer;
+
+}
+
+main.carousel>nav ol li{
+    border: solid .15em var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--nav-color);
+    font-size: 2.5vw;
+    background-color: var(--nav-button);
+}
+
+main.carousel>nav ol li:not(:first-of-type){
+    background-color: var(--background-body);
+}
+
+main.carousel>nav ol li:not(:first-child)::before {
+    display: none;
+}
+
+main.carousel>nav ol li.next{
+background-color: var(--nav-button);
+}
+
+/* main.carousel:has(input[name=to-serie]:checked) > div button:last-of-type{ */
+/* main.carousel:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked) > div button:last-of-type{ */
+/* main.carousel:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked) > div button:last-of-type, */
+/* main.carousel:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked):has(input[name=to-rating]:checked) > div button:last-of-type{ */
+    /* visibility: visible; */
+/* } */
+
+
+
+.visible{
+    visibility: visible;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* form actions */
+/* ************ */
+
+main form section:first-of-type:has(input[required]:valid)>label:last-of-type {
+    display: flex;
+}
+
+/* next checked */
+main form fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/* section 2 */
+main form section:nth-of-type(2):has(input[required]:valid)>label:last-of-type {
+    display: flex;
+}
+
+main form:has(input[name=to-serie]:checked) fieldset:nth-of-type(2) {
+    display: block;
+}
+
+main:has(input[name=to-serie]:checked) nav ol li:nth-of-type(2)::before {
+    display: none;
+}
+
+/* section 3 */
+main form section:nth-of-type(3):has(input[required]:valid)>label:last-of-type {
+    display: flex;
+}
+
+main form:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked) fieldset:nth-of-type(3) {
+    display: block;
+}
+
+main:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked) nav ol li:nth-of-type(3)::before {
+    display: none;
+}
+
+/* section 4 */
+main form section:nth-of-type(4):has(input[type=radio]:checked):has(input[type=number]:valid)>label:last-of-type {
+    display: flex;
+}
+
+main form:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked) fieldset:nth-of-type(4) {
+    display: block;
+}
+
+main:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked) nav ol li:nth-of-type(4)::before {
+    display: none;
+}
+
+/* section 5 */
+
+main form:has(input[id=skip]:checked) fieldset:nth-of-type(5),
+main form:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked):has(input[name=to-rating]:checked) fieldset:nth-of-type(5) {
+    display: block;
+}
+
+main:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked):has(input[id=skip]:checked) nav ol li:nth-of-type(5)::before,
+main:has(input[name=to-serie]:checked):has(input[name=to-Studio]:checked):has(input[name=to-season]:checked):has(input[name=to-rating]:checked) nav ol li:nth-of-type(5)::before {
+    display: none;
 }

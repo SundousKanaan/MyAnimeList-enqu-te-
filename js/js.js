@@ -29,7 +29,6 @@ formInputs.forEach(input => {
 loadFormInputsFromLocal();
 
 
-
 let formRadios = document.querySelectorAll('input[type="radio"]');
 
 function saveFormRadiosToLocal() {
@@ -57,3 +56,130 @@ formRadios.forEach(input => {
 });
 
 loadFormRadiosFromLocal();
+
+
+
+// **********************************************************************************
+// **********************************************************************************
+
+
+// JavaScript on
+const nextButton = document.createElement('button');
+const backButton = document.createElement('button');
+const buttonDiv = document.createElement('div');
+
+function JavaScriptAan() {
+    const main = document.querySelector('main');
+    main.classList.add("carousel");
+
+    backButton.innerText = "Back";
+    nextButton.innerText = "Next";
+
+
+    buttonDiv.appendChild(backButton);
+    buttonDiv.appendChild(nextButton);
+    main.appendChild(buttonDiv);
+}
+
+JavaScriptAan();
+
+const Back = document.querySelector('main.carousel > div button:first-of-type');
+const Next = document.querySelector('main.carousel > div button:last-of-type');
+const fieldsets = document.querySelectorAll('main.carousel form fieldset');
+const questionsProces = document.querySelectorAll("body main>nav ol li");
+const FinishButtons = document.querySelectorAll('main.carousel form fieldset section > label:last-of-type input');
+
+let i = 1;
+
+questionsProces.forEach(questionProces => {
+    questionProces.innerHTML = "";
+    questionProces.innerText = `${i}`;
+    i++;
+});
+
+// console.log(FinishButtons);
+
+// FinishButtons.forEach(FinishButton => {
+//     FinishButton.textContent='Finish';
+// });
+
+
+let currentFieldset = 0;
+
+if (currentFieldset === 0) {
+    Back.classList.add("hidden");
+}
+
+Back.addEventListener('click', () => {
+    if (currentFieldset > 0) {
+        fieldsets[currentFieldset].classList.remove('backQuestion');
+        fieldsets[currentFieldset].classList.remove('nextQuestion');
+        questionsProces[currentFieldset].classList.remove('next');
+
+        currentFieldset--;
+        fieldsets[currentFieldset].classList.add('nextQuestion');
+    }
+
+    if (currentFieldset < fieldsets.length - 1) {
+        Next.classList.remove("hidden");
+        Back.classList.remove("hidden");
+    }
+
+    if (currentFieldset === 0) {
+        Back.classList.add("hidden");
+    }
+});
+
+Next.addEventListener('click', () => {
+    if (currentFieldset < fieldsets.length - 1) {
+        fieldsets[currentFieldset].classList.remove('nextQuestion');
+        fieldsets[currentFieldset].classList.add('backQuestion');
+
+        currentFieldset++;
+        fieldsets[currentFieldset].classList.add('nextQuestion');
+        questionsProces[currentFieldset].classList.add('next');
+    }
+
+    if (currentFieldset > 0) {
+        Back.classList.remove("hidden");
+    }
+
+
+});
+
+
+function saveFormfFinishToLocal() {
+    FinishButtons.forEach(FinishButton => {
+        let inputName = FinishButton.name;
+        let inputValue = FinishButton.value;
+
+        // If the checkbox is checked, display the output text
+        if (FinishButton.checked == true) {
+            console.log(FinishButton, "checked");
+            localStorage.setItem(inputName, inputValue);
+        } else {
+            console.log("not checked");
+            localStorage.setItem(inputName, "off");
+        }
+    });
+}
+
+function loadFormFinishFromLocal() {
+    FinishButtons.forEach(FinishButton => {
+        let inputName = FinishButton.name;
+        let storedValue = localStorage.getItem(inputName);
+
+        if (storedValue && FinishButton.value === storedValue) {
+            FinishButton.checked = true;
+        } else {
+            FinishButton.checked = false;
+        }
+    });
+}
+
+FinishButtons.forEach(FinishButton => {
+    FinishButton.addEventListener('change', saveFormfFinishToLocal);
+});
+
+loadFormFinishFromLocal();
+
