@@ -70,7 +70,7 @@ p:not(footer p),label:not(section>label:last-of-type):not(input[type=radio]){
 
 body {
     width: 100%;
-    height: fit-content;
+    height: auto;
     background-color: var(--background-body);
 
     display: flex;
@@ -139,6 +139,11 @@ main form {
 
 main form fieldset{
     border: none;
+}
+
+/* next checked */
+main form fieldset:not(:first-of-type) {
+    display: none;
 }
 
 main form section {
@@ -748,89 +753,111 @@ footer p {
 
 
 /* main with JavaScript */
-main.carousel{
-    position: relative;
-    /* height: fit-content; */
+body:has(main.carousel){
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
 }
+
+/* main.carousel{
+    background-color: yellow;
+} */
 
 main.carousel form{
-    width: 80vw;
-    /* height:auto; */
-    display: block;
-    align-self: center;
+    width: 80%;
+    /* align-self: center; */
 
     position: relative;
-    margin-top: 10%;
-}
+    /* top: 10vw; */
+    left: 0;
+    /* margin-top: 10em; */
 
-main.carousel form section{
-    width: 80vw;
-
-}
-
-main.carousel form>div{
-    width: 17vw;
-    height: fit-content;
-    position: absolute;
-    top: -13vh;
-    left: calc(50% - 17vw/2);
-    z-index: 100000;
-
-    background-color: red;
-}
-
-main.carousel form>div input{
-    --width:10vw;
-    width: var(--width);
-    height: calc(var(--width)/4);
+/* 
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    gap: 3em; */
 }
 
 main.carousel form fieldset{
+    display: block;
+    width: 100%;
     position: absolute;
     top: 0;
+}
+
+main.carousel form>div{
+    /* width: 80vw;
+    height: 7vw;
+    position: absolute;
+    top: -6em;
+    top: -13vh;
+    left: calc(50% - 17vw/2);
+    z-index: 100000; */
+
+    position: fixed;
+    bottom: 4em;
+
+
+    margin-bottom: 2%;
+}
+
+/* main.carousel form>div input{
+    --width:10vw;
+    width: var(--width);
+    height: calc(var(--width)/4);
+} */
+
+main.carousel form fieldset section{
+    width: 100%;
+
     transition: .5s;
+
+    transform: translateX(100vw);
 }
 
-main.carousel form fieldset:not(:first-of-type){
+main.carousel form fieldset section:last-of-type{
+    margin-bottom: 20%;
+}
+
+main.carousel form fieldset:first-of-type section{
+    /* right: -100vw; */
+    transform: translateX(0);
+}
+
+main.carousel form fieldset.backQuestion section{
     display: block;
-    right: -100vw;
+    transform: translateX(-200vw);
 }
 
-main.carousel form fieldset.backQuestion{
-    right: 200vw;
-}
-
-main.carousel form fieldset.nextQuestion{
-    display: block;
-    right: 0;
+main.carousel form fieldset.nextQuestion section{
+    transform: translateX(0);
 }
 
 main.carousel > div{
-    width: 80vw;
+    width: 90%;
 
     display: flex;
     justify-content: space-between;
 
     position: absolute;
-    top: 13vw;
-
+    bottom: 4.5em;
 }
 
-main.carousel > div button{
+/* main.carousel > div button{
     --width:15vw;
     width: var(--width);
     height: calc(var(--width)/4);
     cursor: pointer;
-}
+} */
 
 /* main.carousel > div button:last-of-type{
     visibility: hidden;
 } */
 
-main.carousel > div button:first-of-type{
+/* main.carousel > div button:first-of-type{
     cursor: pointer;
-
-}
+} */
 
 main.carousel>nav ol li{
     border: solid .15em var(--border-color);
@@ -861,6 +888,11 @@ main.carousel form section>label:last-of-type {
     top: -200vw;
 }
 
+body:has(main.carousel) footer{
+    position: fixed;
+    bottom: 0;
+}
+
 .visible{
     visibility: visible;
 }
@@ -872,7 +904,7 @@ main.carousel form section>label:last-of-type {
 
 
 
-@media (min-width: 800px){
+/* @media (min-width: 800px){
     main form{
         margin-top: 2vw ;
     }
@@ -911,7 +943,7 @@ main.carousel form section>label:last-of-type {
         font-size: 1vw;
     }
 
-}
+} */
 
 
 
@@ -933,11 +965,6 @@ main.carousel form section>label:last-of-type {
 
 main form section:first-of-type:has(input[required]:valid)>label:last-of-type {
     display: flex;
-}
-
-/* next checked */
-main form fieldset:not(:first-of-type) {
-    display: none;
 }
 
 /* section 2 */

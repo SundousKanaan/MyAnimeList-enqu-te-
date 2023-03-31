@@ -118,6 +118,7 @@ Back.addEventListener('click', () => {
         questionsProces[currentFieldset].classList.remove('next');
 
         currentFieldset--;
+        fieldsets[currentFieldset].classList.remove('backQuestion');
         fieldsets[currentFieldset].classList.add('nextQuestion');
     }
 
