@@ -1,0 +1,150 @@
+
+
+/* main with JavaScript */
+body:has(main.carousel){
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+main.carousel form{
+    width: 80%;
+
+    position: relative;
+    left: 0;
+}
+
+main.carousel form fieldset{
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition: .5s;
+}
+
+main.carousel form fieldset:not(:first-of-type){
+    transform: translateX(100vw) scaleY(0);
+    visibility: block;
+}
+
+main.carousel form fieldset:last-of-type section{
+    margin-bottom: 9vh;
+}
+
+main.carousel form fieldset.backQuestion{
+    display: block;
+    transform: translateX(-100vw) scaleY(0);
+}
+
+main.carousel form fieldset.nextQuestion{
+    transform: translateX(0) scaleY(1);
+}
+
+main.carousel form>div{
+    width: 98%;
+    height: 3em;
+
+    position: fixed;
+    top: 75vh;
+    z-index: 1000;
+    justify-content: space-between;
+}
+
+main.carousel form>div input{
+    --width:4em;
+    width: var(--width);
+    height: calc(var(--width) - 1em);
+    margin: 0;
+}
+
+main.carousel > div{
+    width: 98%;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 85vh;
+}
+
+main.carousel > div button{
+    --width: 4em;
+    width: var(--width);
+    height: calc(var(--width) - .4em);
+
+    cursor: pointer;
+
+    background-color: var(--background-section);
+    border:solid .2em var(--border-color);
+    border-radius: .6em;
+    color: var(--h2-titel);
+}
+
+@media (min-width: 600px){
+    main.carousel > div,
+    main.carousel form>div{
+        width: 88%;
+    }
+}
+
+@media (min-width: 1000px){
+    main.carousel > div,
+    main.carousel form>div{
+        width: 85%;
+    }
+
+    main.carousel > div button,
+    main.carousel form>div input{
+        --width:5em;
+    }
+
+    main.carousel form>div input{
+        height: calc(var(--width) - 1.5em);
+    }
+
+    main.carousel > div button{
+        height: calc(var(--width) - 1.4em);
+    }
+}
+
+main.carousel>nav ol li{
+    border: solid .1em var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--nav-color);
+    font-size: 1.5vw;
+    background-color: var(--nav-button);
+}
+
+main.carousel>nav ol li:not(:first-of-type){
+    background-color: var(--background-body);
+}
+
+main.carousel>nav ol li:not(:first-child)::before {
+    display: none;
+}
+
+main.carousel>nav ol li.next{
+background-color: var(--nav-button);
+}
+
+
+main.carousel form section>label:last-of-type {
+    position: absolute;
+    top: -200vw;
+}
+
+body:has(main.carousel) footer{
+    position: fixed;
+    bottom: 0;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.hidden{
+    visibility: hidden;
+}

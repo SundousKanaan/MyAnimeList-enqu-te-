@@ -11,12 +11,11 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
 :root {
+    --h1-font:'Alkatra', cursive;
+    --text-font:'Josefin Sans', sans-serif;
     --background-body: #e3f1ff;
     --background-section: #89bff8;
-    /* --background-Js-note: rgb(255, 89, 89); */
     --background-Js-note: #89bff8;
     --h1-titel: #0051a2;
     --h2-titel: #120172;
@@ -68,6 +67,10 @@ p:not(footer p),label:not(section>label:last-of-type):not(input[type=radio]){
     color: var(--label-p-text-color);
 }
 
+h2,p,label,input{
+    font-family: var(--text-font);
+}
+
 body {
     width: 100%;
     height: auto;
@@ -94,6 +97,7 @@ header>* {
 }
 
 header h1 {
+    font-family: var(--h1-font);
     width: 90%;
     height: fit-content;
     padding: .5em 0;
@@ -120,12 +124,20 @@ body:has(main.carousel) header div {
 
 /* the form */
 main {
-    width: 100%;
+    /* width: 50em; */
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     margin-bottom: 4em;
+}
+
+@media (min-width: 1000px){
+    main{
+        width: 50em;
+    }
+
 }
 
 main form {
@@ -147,7 +159,7 @@ main form fieldset:not(:first-of-type) {
 }
 
 main form section {
-    width: 50vw;
+    width: 100%;
     height: fit-content;
     margin-bottom: 2em;
 
@@ -280,26 +292,9 @@ main form section:first-of-type span:has(input[type=text]:invalid)::after {
 
     main form section:first-of-type span:has(input[type=text]:invalid)::after {
         --width: 55%;
-        font-size: 2vw;
+        font-size: 1em;
     }
 }
-
-@media (min-width: 920px) {
-    main form section:first-of-type span:has(input[type=text]:invalid)::after {
-        font-size: 1.5vw;
-    }
-}
-
-@media (min-width: 1313px) {
-    main form section:first-of-type span {
-        --width: 50%;
-    }
-
-    main form section:first-of-type span:has(input[type=text]:invalid)::after {
-        --width: 80%;
-    }
-}
-
 
 
 
@@ -361,10 +356,6 @@ main form ul li:last-child{
     margin-bottom: 2% ;
 }
 
-/* main form ol li:last-child {
-    margin-bottom: 2%;
-} */
-
 main form ol li div {
     width: 100%;
     display: flex;
@@ -382,10 +373,15 @@ form div:has(input[type=radio]){
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: .6em;
+    gap: .5em;
     margin-bottom: 2%;
 }
 
+@media (min-width: 1000px){
+    form div:has(input[type=radio]){
+        justify-content: center;
+    }
+}
 
 main form section input[type=radio]{
     appearance: none;
@@ -403,11 +399,17 @@ main form section label:has(input[type=radio]){
     padding: 2%;
     border-radius: .5em;
     margin: 0;
+    font-size: 2vw;
     text-align: center;
 
     background-color: var(--on-active-button);
     cursor: pointer;
+}
 
+@media (min-width: 1000px){
+    main form section label:has(input[type=radio]){
+        font-size: 1.2vw;
+    }
 }
 
 main form section label:has(input[type=radio]:checked){
@@ -739,222 +741,6 @@ footer p {
     align-self: center;
     color: var(--h1-titel);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* main with JavaScript */
-body:has(main.carousel){
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
-}
-
-/* main.carousel{
-    background-color: yellow;
-} */
-
-main.carousel form{
-    width: 80%;
-    /* align-self: center; */
-
-    position: relative;
-    /* top: 10vw; */
-    left: 0;
-    /* margin-top: 10em; */
-
-/* 
-    flex-direction: row;
-    align-items: start;
-    justify-content: start;
-    gap: 3em; */
-}
-
-main.carousel form fieldset{
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 0;
-}
-
-main.carousel form>div{
-    /* width: 80vw;
-    height: 7vw;
-    position: absolute;
-    top: -6em;
-    top: -13vh;
-    left: calc(50% - 17vw/2);
-    z-index: 100000; */
-
-    position: fixed;
-    bottom: 4em;
-
-
-    margin-bottom: 2%;
-}
-
-/* main.carousel form>div input{
-    --width:10vw;
-    width: var(--width);
-    height: calc(var(--width)/4);
-} */
-
-main.carousel form fieldset section{
-    width: 100%;
-
-    transition: .5s;
-
-    transform: translateX(100vw);
-}
-
-main.carousel form fieldset section:last-of-type{
-    margin-bottom: 20%;
-}
-
-main.carousel form fieldset:first-of-type section{
-    /* right: -100vw; */
-    transform: translateX(0);
-}
-
-main.carousel form fieldset.backQuestion section{
-    display: block;
-    transform: translateX(-200vw);
-}
-
-main.carousel form fieldset.nextQuestion section{
-    transform: translateX(0);
-}
-
-main.carousel > div{
-    width: 90%;
-
-    display: flex;
-    justify-content: space-between;
-
-    position: absolute;
-    bottom: 4.5em;
-}
-
-/* main.carousel > div button{
-    --width:15vw;
-    width: var(--width);
-    height: calc(var(--width)/4);
-    cursor: pointer;
-} */
-
-/* main.carousel > div button:last-of-type{
-    visibility: hidden;
-} */
-
-/* main.carousel > div button:first-of-type{
-    cursor: pointer;
-} */
-
-main.carousel>nav ol li{
-    border: solid .15em var(--border-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: var(--nav-color);
-    font-size: 2.5vw;
-    background-color: var(--nav-button);
-}
-
-main.carousel>nav ol li:not(:first-of-type){
-    background-color: var(--background-body);
-}
-
-main.carousel>nav ol li:not(:first-child)::before {
-    display: none;
-}
-
-main.carousel>nav ol li.next{
-background-color: var(--nav-button);
-}
-
-
-main.carousel form section>label:last-of-type {
-    position: absolute;
-    top: -200vw;
-}
-
-body:has(main.carousel) footer{
-    position: fixed;
-    bottom: 0;
-}
-
-.visible{
-    visibility: visible;
-}
-
-.hidden{
-    visibility: hidden;
-}
-
-
-
-
-/* @media (min-width: 800px){
-    main form{
-        margin-top: 2vw ;
-    }
-    main.carousel form{
-        width: 40vw;
-    }
-
-    main.carousel form section{
-        width: 40vw;
-    }
-
-    main.carousel>div{
-        width: 40vw;
-        height: fit-content;
-        top: 7vw;
-    }
-
-    main.carousel > div button{
-        --width:10vw;
-        height: 3vw;
-    }
-
-    main>nav{
-        width:50%;
-        height: 5vw;
-        margin: 0;
-        left: calc(50% - 50%/2);
-    }
-
-    main.carousel form> div button{
-    --width:10vw;
-}
-
-    main>nav ol li a,
-    main>nav ol li:not(:first-child)::before{
-        font-size: 1vw;
-    }
-
-} */
-
-
-
-
-
-
-
-
-
-
-
 
 
 

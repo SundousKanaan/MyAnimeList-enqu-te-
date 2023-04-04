@@ -115,6 +115,7 @@ Back.addEventListener('click', () => {
     if (currentFieldset > 0) {
         fieldsets[currentFieldset].classList.remove('backQuestion');
         fieldsets[currentFieldset].classList.remove('nextQuestion');
+
         questionsProces[currentFieldset].classList.remove('next');
 
         currentFieldset--;
@@ -132,25 +133,11 @@ Back.addEventListener('click', () => {
     }
 });
 
-const inputs = document.querySelectorAll('main.carousel form fieldset section input[required]');
-console.log(inputs);
-
-function check(currentFieldset) {
-    if (fieldsets[currentFieldset]) {
-        console.log(fieldsets[currentFieldset].childNodes[1]);
-        console.log("hiiii", currentFieldset);
-    } else {
-        console.log("NEEEE");
-    }
-}
-
-check(currentFieldset); 
-
 Next.addEventListener('click', () => {
     if (currentFieldset < fieldsets.length - 1) {
         fieldsets[currentFieldset].classList.remove('nextQuestion');
         fieldsets[currentFieldset].classList.add('backQuestion');
-        check(currentFieldset);
+
         currentFieldset++;
         fieldsets[currentFieldset].classList.add('nextQuestion');
         questionsProces[currentFieldset].classList.add('next');
@@ -158,6 +145,9 @@ Next.addEventListener('click', () => {
 
     if (currentFieldset > 0) {
         Back.classList.remove("hidden");
+    }
+    if(currentFieldset === 4){
+        Next.classList.add("hidden");
     }
 
 });
