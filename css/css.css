@@ -73,8 +73,7 @@ section:target {
 }
 
 
-p:not(footer p),
-label:not(section>label:last-of-type):not(input[type=radio]) {
+p:not(footer p) {
     color: var(--label-p-text-color);
 }
 
@@ -440,6 +439,10 @@ main form section input[type=radio] {
 
 main form #General-ratings ol li div label{
     color: var(--rating-color);
+}
+
+main form #General-ratings label:has(input[type=radio]:checked){
+    color: var(--re-sub-color);
 }
 
 main form section label:has(input[type=radio]) {
