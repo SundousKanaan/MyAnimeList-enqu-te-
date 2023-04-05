@@ -47,7 +47,7 @@ main.carousel form>div{
     height: 3em;
 
     position: fixed;
-    bottom: 8em;
+    bottom: 10em;
     justify-content: space-between;
 }
 
@@ -56,6 +56,7 @@ main.carousel form>div input{
     width: var(--width);
     height: calc(var(--width) - 1em);
     margin: 0;
+    font-size: 2vw;
 }
 
 main.carousel > div{
@@ -96,7 +97,8 @@ main.carousel > div button{
 
     main.carousel > div button,
     main.carousel form>div input{
-        --width:5em;
+        --width:4em;
+        font-size: 1.2vw;
     }
 
     main.carousel form>div input{
@@ -112,6 +114,10 @@ main.carousel>nav{
     height: 7vw;
 }
 
+main.carousel>nav ol{
+    height: 100%;
+}
+
 main.carousel>nav ol li{
     border: solid .1em var(--border-color);
     display: flex;
@@ -119,9 +125,18 @@ main.carousel>nav ol li{
     align-items: center;
 
     color: var(--nav-color);
-    font-size: 1.5vw;
+    font-size: 2.5vw;
     background-color: var(--background-body);
+}
 
+@media (min-width: 1000px){
+    main.carousel>nav{
+        height: 2vw;
+    }
+
+    main.carousel>nav ol li{
+        font-size: 1.5vw;
+    }
 }
 
 
