@@ -22,11 +22,13 @@ main.carousel form fieldset{
     z-index: 1;
 
     transform-origin: top;
+
+    /* visibility: hidden; */
 }
 
 main.carousel form fieldset:not(:first-of-type){
     transform: translateX(100vw) scaleY(0);
-    visibility: block;
+    visibility: hidden;
 }
 
 main.carousel form fieldset:last-of-type section{
@@ -34,11 +36,13 @@ main.carousel form fieldset:last-of-type section{
 }
 
 main.carousel form fieldset.backQuestion{
-    display: block;
+    /* display: block; */
+    visibility: hidden;
     transform: translateX(-100vw) scaleY(0);
 }
 
 main.carousel form fieldset.nextQuestion{
+    visibility: visible;
     transform: translateX(0) scaleY(1);
 }
 
