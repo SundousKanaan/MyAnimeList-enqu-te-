@@ -122,6 +122,12 @@ appearance: none;
 -moz-appearance: none;
 ```
 
+*Fix?*
+- :has()
+  -Gebruik jQuery, een populaire JavaScript-bibliotheek, die de :has()-selector ondersteunt.
+- main auto class add event
+  - class in de html te gebruiken?
+
 <img src="./readmeImages/firefox.png" alt="fire fox test">
 
 ### 3. Safari
