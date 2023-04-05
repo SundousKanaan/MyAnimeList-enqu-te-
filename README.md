@@ -21,8 +21,6 @@ Vereisten voor de enquête:
   - Animatie (hoe hoogwaardig is de animatie) *
   - Muziek (hoe goed past de muziek bij de serie) *
 
-✅ ❌
-
 ## Opdracht Criteria 
 
 ### 1. Validatie: Zorg ervoor dat het formulier compleet wordt ingevuld. Geef duidelijke foutmeldingen. Bedenk zelf wanneer en hoe de validatie zal plaatsvinden. ✅
@@ -42,7 +40,7 @@ Vereisten voor de enquête:
 ## Features test
 
 ### 1. HTML
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/html.png" alt="html page">
 
 ### 2. HTML + CSS
 <img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
