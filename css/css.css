@@ -12,14 +12,14 @@ html {
 }
 
 :root {
-    --h1-font:'Alkatra', cursive;
-    --text-font:'Josefin Sans', sans-serif;
+    --h1-font: 'Alkatra', cursive;
+    --text-font: 'Josefin Sans', sans-serif;
     --background-body: #e3f1ff;
     --background-section: #89bff8;
     --background-Js-note: #89bff8;
     --h1-titel: #0051a2;
     --h2-titel: #120172;
-    --label-p-text-color:rgb(2, 0, 114);
+    --label-p-text-color: rgb(2, 0, 114);
     --nav-color: #120172;
     --nav-button: #89bff8;
     --border-color: #1b75be;
@@ -41,8 +41,8 @@ html {
     --next-buttons-background: #e3f1ff;
 }
 
-@media (prefers-color-scheme: dark){
-    :root{
+@media (prefers-color-scheme: dark) {
+    :root {
         --background-body: #08306b;
         --h1-titel: #e3f1ff;
         --background-Js-note: #e3f1ff;
@@ -54,7 +54,7 @@ html {
     }
 }
 
-section:target{
+section:target {
     box-shadow: 0 0 0 .5vw var(--target-shadow);
     --background-section: #08306b;
     --h2-titel: #e3f1ff;
@@ -63,11 +63,15 @@ section:target{
 }
 
 
-p:not(footer p),label:not(section>label:last-of-type):not(input[type=radio]){
+p:not(footer p),
+label:not(section>label:last-of-type):not(input[type=radio]) {
     color: var(--label-p-text-color);
 }
 
-h2,p,label,input{
+h2,
+p,
+label,
+input {
     font-family: var(--text-font);
 }
 
@@ -119,6 +123,10 @@ body:has(main.carousel) header div {
     display: none;
 }
 
+header div p:last-of-type {
+    display: none;
+}
+
 
 
 
@@ -133,8 +141,8 @@ main {
     margin-bottom: 4em;
 }
 
-@media (min-width: 1000px){
-    main{
+@media (min-width: 1000px) {
+    main {
         width: 50em;
     }
 
@@ -149,7 +157,8 @@ main form {
     align-items: center;
 }
 
-main form fieldset{
+main form fieldset {
+    width: 100%;
     border: none;
 }
 
@@ -178,7 +187,7 @@ main form fieldset:nth-of-type(3):has(input[value=Yes]:checked) section ol li:la
     display: flex;
 }
 
-main form section:nth-of-type(3) ol li:last-child span{
+main form section:nth-of-type(3) ol li:last-child span {
     margin-top: 2%;
 }
 
@@ -194,7 +203,17 @@ main form section label {
     margin: 2% 5% 2% 5%;
 }
 
+main form fieldset:nth-of-type(4):has(input[id=skip]:checked) section ul li:last-child,
+main form fieldset:nth-of-type(4) section ul li:last-child {
+    display: none;
+}
 
+main form fieldset:nth-of-type(4):has(input[id=Winter]:checked) section ul li:last-child,
+main form fieldset:nth-of-type(4):has(input[id=Spring]:checked) section ul li:last-child,
+main form fieldset:nth-of-type(4):has(input[id=Summer]:checked) section ul li:last-child,
+main form fieldset:nth-of-type(4):has(input[id=Fall]:checked) section ul li:last-child{
+    display: block;
+}
 
 
 
@@ -352,8 +371,8 @@ main form ul li {
     margin: 0 1em;
 }
 
-main form ul li:last-child{
-    margin-bottom: 2% ;
+main form ul li:last-child {
+    margin-bottom: 2%;
 }
 
 main form ol li div {
@@ -368,7 +387,7 @@ main form ol li div label {
     margin: 2%;
 }
 
-form div:has(input[type=radio]){
+form div:has(input[type=radio]) {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -377,13 +396,13 @@ form div:has(input[type=radio]){
     margin-bottom: 2%;
 }
 
-@media (min-width: 1000px){
-    form div:has(input[type=radio]){
+@media (min-width: 1000px) {
+    form div:has(input[type=radio]) {
         justify-content: center;
     }
 }
 
-main form section input[type=radio]{
+main form section input[type=radio] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -393,7 +412,7 @@ main form section input[type=radio]{
     left: -100vw;
 }
 
-main form section label:has(input[type=radio]){
+main form section label:has(input[type=radio]) {
     width: 10vw;
     height: fit-content;
     padding: 2%;
@@ -406,18 +425,18 @@ main form section label:has(input[type=radio]){
     cursor: pointer;
 }
 
-@media (min-width: 1000px){
-    main form section label:has(input[type=radio]){
+@media (min-width: 1000px) {
+    main form section label:has(input[type=radio]) {
         font-size: 1.2vw;
     }
 }
 
-main form section label:has(input[type=radio]:checked){
-    color: var(--next-buttons-background) ;
+main form section label:has(input[type=radio]:checked) {
+    color: var(--next-buttons-background);
     background-color: var(--checked-radioButton);
 }
 
-main form section label:has(input[type=radio]:focus){
+main form section label:has(input[type=radio]:focus) {
     box-shadow: var(--focus-boxshadow);
 }
 
@@ -426,140 +445,140 @@ main form section label:has(input[type=radio]:focus){
 main form section label:has(input[id=Storyline1]),
 main form section label:has(input[id=characters1]),
 main form section label:has(input[id=Animation1]),
-main form section label:has(input[id=Music1]){
+main form section label:has(input[id=Music1]) {
     background-color: #33FF00;
 }
 
 main form section label:has(input[id=Storyline1]):hover,
 main form section label:has(input[id=characters1]):hover,
 main form section label:has(input[id=Animation1]):hover,
-main form section label:has(input[id=Music1]):hover{
+main form section label:has(input[id=Music1]):hover {
     background-color: #2CDE00;
 }
 
 main form section label:has(input[id=Storyline2]),
 main form section label:has(input[id=characters2]),
 main form section label:has(input[id=Animation2]),
-main form section label:has(input[id=Music2]){
+main form section label:has(input[id=Music2]) {
     background-color: #66FF00;
 }
 
 main form section label:has(input[id=Storyline2]):hover,
 main form section label:has(input[id=characters2]):hover,
 main form section label:has(input[id=Animation2]):hover,
-main form section label:has(input[id=Music2]):hover{
+main form section label:has(input[id=Music2]):hover {
     background-color: #59DE00;
 }
 
 main form section label:has(input[id=Storyline3]),
 main form section label:has(input[id=characters3]),
 main form section label:has(input[id=Animation3]),
-main form section label:has(input[id=Music3]){
+main form section label:has(input[id=Music3]) {
     background-color: #99FF00;
 }
 
 main form section label:has(input[id=Storyline3]):hover,
 main form section label:has(input[id=characters3]):hover,
 main form section label:has(input[id=Animation3]):hover,
-main form section label:has(input[id=Music3]):hover{
+main form section label:has(input[id=Music3]):hover {
     background-color: #85DE00;
 }
 
 main form section label:has(input[id=Storyline4]),
 main form section label:has(input[id=characters4]),
 main form section label:has(input[id=Animation4]),
-main form section label:has(input[id=Music4]){
+main form section label:has(input[id=Music4]) {
     background-color: #CCFF00;
 }
 
 main form section label:has(input[id=Storyline4]):hover,
 main form section label:has(input[id=characters4]):hover,
 main form section label:has(input[id=Animation4]):hover,
-main form section label:has(input[id=Music4]):hover{
+main form section label:has(input[id=Music4]):hover {
     background-color: #CCFF00;
 }
 
 main form section label:has(input[id=Storyline5]),
 main form section label:has(input[id=characters5]),
 main form section label:has(input[id=Animation5]),
-main form section label:has(input[id=Music5]){
+main form section label:has(input[id=Music5]) {
     background-color: #FFFF00;
 }
 
 main form section label:has(input[id=Storyline5]):hover,
 main form section label:has(input[id=characters5]):hover,
 main form section label:has(input[id=Animation5]):hover,
-main form section label:has(input[id=Music5]):hover{
+main form section label:has(input[id=Music5]):hover {
     background-color: #DEDE00;
 }
 
 main form section label:has(input[id=Storyline6]),
 main form section label:has(input[id=characters6]),
 main form section label:has(input[id=Animation6]),
-main form section label:has(input[id=Music6]){
+main form section label:has(input[id=Music6]) {
     background-color: #FFCC00;
 }
 
 main form section label:has(input[id=Storyline6]):hover,
 main form section label:has(input[id=characters6]):hover,
 main form section label:has(input[id=Animation6]):hover,
-main form section label:has(input[id=Music6]):hover{
+main form section label:has(input[id=Music6]):hover {
     background-color: #DEB100;
 }
 
 main form section label:has(input[id=Storyline7]),
 main form section label:has(input[id=characters7]),
 main form section label:has(input[id=Animation7]),
-main form section label:has(input[id=Music7]){
+main form section label:has(input[id=Music7]) {
     background-color: #FF9900;
 }
 
 main form section label:has(input[id=Storyline7]):hover,
 main form section label:has(input[id=characters7]):hover,
 main form section label:has(input[id=Animation7]):hover,
-main form section label:has(input[id=Music7]):hover{
+main form section label:has(input[id=Music7]):hover {
     background-color: #DE8500;
 }
 
 main form section label:has(input[id=Storyline8]),
 main form section label:has(input[id=characters8]),
 main form section label:has(input[id=Animation8]),
-main form section label:has(input[id=Music8]){
+main form section label:has(input[id=Music8]) {
     background-color: #FF6600;
 }
 
 main form section label:has(input[id=Storyline8]):hover,
 main form section label:has(input[id=characters8]):hover,
 main form section label:has(input[id=Animation8]):hover,
-main form section label:has(input[id=Music8]):hover{
+main form section label:has(input[id=Music8]):hover {
     background-color: #DE5900;
 }
 
 main form section label:has(input[id=Storyline9]),
 main form section label:has(input[id=characters9]),
 main form section label:has(input[id=Animation9]),
-main form section label:has(input[id=Music9]){
+main form section label:has(input[id=Music9]) {
     background-color: #FF3300;
 }
 
 main form section label:has(input[id=Storyline9]):hover,
 main form section label:has(input[id=characters9]):hover,
 main form section label:has(input[id=Animation9]):hover,
-main form section label:has(input[id=Music9]):hover{
+main form section label:has(input[id=Music9]):hover {
     background-color: #DE2C00;
 }
 
 main form section label:has(input[id=Storyline10]),
 main form section label:has(input[id=characters10]),
 main form section label:has(input[id=Animation10]),
-main form section label:has(input[id=Music10]){
+main form section label:has(input[id=Music10]) {
     background-color: #FF0000;
 }
 
 main form section label:has(input[id=Storyline10]):hover,
 main form section label:has(input[id=characters10]):hover,
 main form section label:has(input[id=Animation10]):hover,
-main form section label:has(input[id=Music10]):hover{
+main form section label:has(input[id=Music10]):hover {
     background-color: #DE0000;
 }
 
@@ -625,7 +644,7 @@ form:valid>div input[type=submit] {
 
 /* the form nav */
 main>nav {
-    width: 90%;
+    width: 100%;
     height: 7vw;
 
     margin: 3% 0;
@@ -667,6 +686,7 @@ main>nav ol li {
     align-self: center;
 }
 
+
 main>nav ol li:not(:first-child)::before {
     content: attr(data-name);
     width: 100%;
@@ -686,7 +706,6 @@ main>nav ol li:not(:first-child)::before {
     left: 0;
 }
 
-
 main>nav ol li a {
     width: 100%;
     height: 100%;
@@ -700,6 +719,17 @@ main>nav ol li a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 1000px) {
+    main>nav {
+        height: 5vh;
+    }
+
+    main>nav ol li:not(:first-child)::before,
+    main>nav ol li a {
+        font-size: 1.5vw;
+    }
 }
 
 main>nav ol li a:hover {
@@ -731,6 +761,7 @@ footer {
     border-top: solid 1px var(--border-color);
     position: fixed;
     bottom: 0;
+    z-index: 3;
     background-color: var(--background-body);
 }
 

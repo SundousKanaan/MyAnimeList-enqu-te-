@@ -16,10 +16,12 @@ main.carousel form{
 
 main.carousel form fieldset{
     display: block;
-    width: 100%;
     position: absolute;
     top: 0;
     transition: .5s;
+    z-index: 1;
+
+    transform-origin: top;
 }
 
 main.carousel form fieldset:not(:first-of-type){
@@ -45,8 +47,7 @@ main.carousel form>div{
     height: 3em;
 
     position: fixed;
-    top: 75vh;
-    z-index: 1000;
+    bottom: 8em;
     justify-content: space-between;
 }
 
@@ -64,7 +65,7 @@ main.carousel > div{
     justify-content: space-between;
 
     position: fixed;
-    top: 85vh;
+    bottom: 4em;
 }
 
 main.carousel > div button{
@@ -107,6 +108,10 @@ main.carousel > div button{
     }
 }
 
+main.carousel>nav{
+    height: 7vw;
+}
+
 main.carousel>nav ol li{
     border: solid .1em var(--border-color);
     display: flex;
@@ -115,18 +120,20 @@ main.carousel>nav ol li{
 
     color: var(--nav-color);
     font-size: 1.5vw;
-    background-color: var(--nav-button);
+    background-color: var(--background-body);
+
 }
 
-main.carousel>nav ol li:not(:first-of-type){
-    background-color: var(--background-body);
-}
 
 main.carousel>nav ol li:not(:first-child)::before {
     display: none;
 }
 
-main.carousel>nav ol li.next{
+main.carousel:has(fieldset:first-of-type:valid)>nav ol li:first-child,
+main.carousel:has(fieldset:nth-of-type(2):valid)>nav ol li:nth-child(2),
+main.carousel:has(fieldset:nth-of-type(3):valid)>nav ol li:nth-child(3),
+main.carousel:has(fieldset:nth-of-type(4):valid)>nav ol li:nth-child(4),
+main.carousel:has(fieldset:nth-of-type(5):valid)>nav ol li:last-child{
 background-color: var(--nav-button);
 }
 

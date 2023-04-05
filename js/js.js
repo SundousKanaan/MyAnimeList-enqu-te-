@@ -116,8 +116,6 @@ Back.addEventListener('click', () => {
         fieldsets[currentFieldset].classList.remove('backQuestion');
         fieldsets[currentFieldset].classList.remove('nextQuestion');
 
-        questionsProces[currentFieldset].classList.remove('next');
-
         currentFieldset--;
         fieldsets[currentFieldset].classList.remove('backQuestion');
         fieldsets[currentFieldset].classList.add('nextQuestion');
@@ -140,7 +138,6 @@ Next.addEventListener('click', () => {
 
         currentFieldset++;
         fieldsets[currentFieldset].classList.add('nextQuestion');
-        questionsProces[currentFieldset].classList.add('next');
     }
 
     if (currentFieldset > 0) {
