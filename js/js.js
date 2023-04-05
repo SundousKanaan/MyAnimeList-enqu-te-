@@ -1,4 +1,5 @@
 let formInputs = document.querySelectorAll('input[type="text"],input[type="number"]');
+let formRadios = document.querySelectorAll('input[type="radio"]');
 
 function saveFormInputsToLocal() {
     // Loop over each form input and save its value to local storage
@@ -27,9 +28,6 @@ formInputs.forEach(input => {
 
 // Call the function once on page load to save and invul initial values
 loadFormInputsFromLocal();
-
-
-let formRadios = document.querySelectorAll('input[type="radio"]');
 
 function saveFormRadiosToLocal() {
     formRadios.forEach(input => {
@@ -68,6 +66,12 @@ const nextButton = document.createElement('button');
 const backButton = document.createElement('button');
 const buttonDiv = document.createElement('div');
 
+const Back = document.querySelector('main.carousel > div button:first-of-type');
+const Next = document.querySelector('main.carousel > div button:last-of-type');
+const fieldsets = document.querySelectorAll('main.carousel form fieldset');
+const questionsProces = document.querySelectorAll("body main>nav ol li");
+const nextButtons = document.querySelectorAll('main.carousel form fieldset section > label:last-of-type');
+
 function JavaScriptAan() {
     const main = document.querySelector('main');
     main.classList.add("carousel");
@@ -83,12 +87,6 @@ function JavaScriptAan() {
 
 JavaScriptAan();
 
-const Back = document.querySelector('main.carousel > div button:first-of-type');
-const Next = document.querySelector('main.carousel > div button:last-of-type');
-const fieldsets = document.querySelectorAll('main.carousel form fieldset');
-const questionsProces = document.querySelectorAll("body main>nav ol li");
-const nextButtons = document.querySelectorAll('main.carousel form fieldset section > label:last-of-type');
-
 nextButtons.forEach(nextButton => {
     nextButton.classList.add('hidden');
 });
@@ -101,8 +99,6 @@ questionsProces.forEach(questionProces => {
     questionProces.innerText = `${i}`;
     i++;
 });
-
-// console.log(FinishButtons);
 
 
 let currentFieldset = 0;

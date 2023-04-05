@@ -107,7 +107,22 @@ Het was interessant om een ​​schermlezer uit te proberen. Waar de secties va
 De site is gebouwd met behulp van de Chrome-browser, dus het werkt zoals het hoort zonder problemen.
 
 ### 2. Fire Fox
-<img src="./readmeImages/.png" alt="">
+- De Fire Fox support geen `:has()` selectors dus de notetie verschijnt in het pagina.
+```
+// geen js notetie
+body:has(main.carousel) header div {
+    display: none;
+}
+```
+- Hij pakt ook geen radio buttons styling, want ik heb de styling met `:has()` gemaakt en `appearance: none;` toegevoegd.
+
+```
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+```
+
+<img src="./readmeImages/firefox.png" alt="fire fox test">
 
 ### 3. Safari
 <img src="./readmeImages/.png" alt="">
