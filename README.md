@@ -114,7 +114,7 @@ body:has(main.carousel) header div {
     display: none;
 }
 ```
-- Hij pakt ook geen radio buttons styling, want ik heb de styling met `:has()` gemaakt en `appearance: none;` toegevoegd.
+- Hij pakt ook geen radio buttons styling en mijn checkboxes in het alleen css setuatie, want ik heb de styling met `:has()` gemaakt en `appearance: none;` toegevoegd.
 
 ```
 appearance: none;
