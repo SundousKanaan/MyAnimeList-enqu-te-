@@ -12,7 +12,7 @@ html {
 }
 
 :root {
-    --h1-font: 'Alkatra', cursive;
+    --h1-font: 'Alkatra', cursive, sans-serif;
     --text-font: 'Josefin Sans', sans-serif;
     --background-body: #e3f1ff;
     --background-section: #89bff8;
@@ -32,7 +32,7 @@ html {
     0 0 0 .2em var(--background-body),
     0 0 .5em .3em var(--background-section);
     /* --wrong-invalid-border: rgb(161, 0, 0); */
-    --wrong-invalid-border: #990000;
+    --wrong-invalid-border: #7A0000;
     /* --good-valid-border: #008600; */
     --good-valid-border: #06510c;
 

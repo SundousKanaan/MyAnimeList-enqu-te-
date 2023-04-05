@@ -40,33 +40,71 @@ Vereisten voor de enquête:
 ## Features test
 
 ### 1. HTML
-<img src="./readmeImages/html.png" alt="html page">
+Duidelijk html pagina met twee noteties:
+1. Geen JavaScript ondersteunen note.
+2. Geen layout styling gepakt note.
+
+<img src="./readmeImages/html.png" alt="html pagina">
 
 ### 2. HTML + CSS
-<img src="./readmeImages/css.png" alt="the page with css styling">
+Duidelijk em mooie pagina met "Geen JavaScript ondersteunen note" maar de gebruiker kan wel de Enqute invullen en alle vragen zien.
+
+<img src="./readmeImages/css.png" alt="De pagina met css styling">
 
 ### 3. HTML + CSS + JavaScript
-<img src="./readmeImages/.png" alt="">
+Mooie gewerkte website.
+
+<img src="./readmeImages/js.png" alt="De pagina met JavaScript bestand">
 
 ### 4. Slecht Internet
-<img src="./readmeImages/.png" alt="">
+Ik vind dat mijn website werkt goed met een slecht Internet verbinen want de gebruiker moet 1 pagina openen en geen linkijs naar ander pagina die goed internet nodig om te werken.
+
+Normal tijd: 4ms.
+Slow 3G loading tijd: 2.03s.
+
+<img src="./readmeImages/slow3g.png" alt="De pagina testen in de Slecht Internet">
 
 ### 5. Custom fonts
-<img src="./readmeImages/.png" alt="">
+Ik heb geen custom fonts in mijn website, omdat sommige browsers ze niet ondersteunen, of het lettertype niet direct verschijnt tijdens het laden van de pagina, is het beter om back-uplettertypen te kiezen die gegarandeerd werken en lijken op de gekozen lettertypestijl.
+
+```
+--h1-font: 'Alkatra', cursive, sans-serif;
+--text-font: 'Josefin Sans', sans-serif;
+```
 
 ### 6. Kleuren contrast
-<img src="./readmeImages/.png" alt="">
+Mijn KLeuren contrast was goed maar sommige kleuren niet zoals
+:
+- De fout melding kleur met de section achtergrond kleur
+
+<img src="./readmeImages/colorContrast1.png" alt="de kleuren contrast test 1">
+<img src="./readmeImages/colorContrast2.png" alt="de kleuren contrast test 2">
+
+- De border kleur van de goed ingevuld input
+
+<img src="./readmeImages/colorContrast3.png" alt="de kleuren contrast test 3">
+<img src="./readmeImages/colorContrast4.png" alt="de kleuren contrast test 4">
+
+- De Submit knop
+
+<img src="./readmeImages/colorContrast5.png" alt="de kleuren contrast test 5">
+<img src="./readmeImages/colorContrast6.png" alt="de kleuren contrast test 6">
 
 ### 7. Muis/Trackpad werkt niet
-<img src="./readmeImages/.png" alt="">
+De website kan goed werken door de toetsenbord met een focus animatie.
 
 ### 8. Screen reader
-<img src="./readmeImages/.png" alt="">
+Het was interessant om een ​​schermlezer uit te proberen. Waar de secties van het formulier buiten het frame van het scherm waren geplaatst, las de lezer ze ook, dus ik probeerde `visibility: hidden;` en het werkte zoals het hoort, aangezien het `transform` effect bleef werken zoals het zou moeten, en de schermlezer niet ziet langer de rest van de secties behalve het schijnbare schudden.
+
+`visibility: hidden;` i.p.v `display:none` want met de tweede gaat de `transform` niet werken.
+
+---
+---
 
 ## Brouwsers test
 
 ### 1. Chrome
-<img src="./readmeImages/.png" alt="">
+De site is gebouwd met behulp van de Chrome-browser, dus het werkt zoals het hoort zonder problemen.
 
 ### 2. Fire Fox
 <img src="./readmeImages/.png" alt="">
