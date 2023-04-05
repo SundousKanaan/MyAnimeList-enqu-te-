@@ -29,16 +29,20 @@ html {
 
     --focus-input: #120172;
     --focus-boxshadow: 0 0 0 .2em var(--focus-input);
-    --wrong-invalid-border: rgb(161, 0, 0);
-    --good-valid-border: rgb(0, 134, 0);
+    /* --wrong-invalid-border: rgb(161, 0, 0); */
+    --wrong-invalid-border: #990000;
+    /* --good-valid-border: #008600; */
+    --good-valid-border: #06510c;
 
     --on-active-button: #e3f1ff;
     --checked-radioButton: #2171b5;
     --checked-button: #0051a2;
     --hover-button: rgb(0, 204, 255);
     --active-button: blue;
-    --submit-button: rgb(12, 160, 25);
+    /* --submit-button: rgb(12, 160, 25); */
+    --submit-button: #097B13;
     --next-buttons-background: #e3f1ff;
+    --rating-color:black;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -71,7 +75,8 @@ label:not(section>label:last-of-type):not(input[type=radio]) {
 h2,
 p,
 label,
-input {
+input,
+::after {
     font-family: var(--text-font);
 }
 
@@ -412,6 +417,11 @@ main form section input[type=radio] {
     left: -100vw;
 }
 
+main form #General-ratings ol li div label{
+    color: var(--rating-color);
+    /* font-weight: bold; */
+}
+
 main form section label:has(input[type=radio]) {
     width: 10vw;
     height: fit-content;
@@ -439,6 +449,8 @@ main form section label:has(input[type=radio]:checked) {
 main form section label:has(input[type=radio]:focus) {
     box-shadow: var(--focus-boxshadow);
 }
+
+
 
 
 /* rating colors */
