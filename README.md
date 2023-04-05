@@ -43,53 +43,53 @@ Vereisten voor de enquête:
 <img src="./readmeImages/html.png" alt="html page">
 
 ### 2. HTML + CSS
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/css.png" alt="the page with css styling">
 
 ### 3. HTML + CSS + JavaScript
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 4. Slecht Internet
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 5. Custom fonts
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 6. Kleuren contrast
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 7. Muis/Trackpad werkt niet
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 8. Screen reader
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ## Brouwsers test
 
 ### 1. Chrome
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 2. Fire Fox
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 3. Safari
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 4. Samsung Internet
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 5. UC Browser
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 6. Android
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ### 7. iphone
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 
 ## Na Submiten
 
-<img src="./readmeImages/Activity-Diagram.png" alt="Activity Diagram with the service worker">
+<img src="./readmeImages/.png" alt="">
 
 ## Wat zou ik anders doen!
 - Ik zou een introductie pagina maken met een korte inleiding over de enquête.
