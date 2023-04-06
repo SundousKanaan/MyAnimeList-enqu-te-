@@ -140,11 +140,13 @@ appearance: none;
 <img src="./readmeImages/firefox2.png" alt="fire fox test 2">
 
 ### 3. Safari
-Technisch werkt de site zonder problemen zoals het hoort.
+
+- Technisch werkt de site zonder problemen zoals het hoort.
+
 <img src="./readmeImages/safari1.png" alt="safari test 1">
 <img src="./readmeImages/safari2.png" alt="safari test 2">
 
-Ik heb van mijn collega geleerd dat Safari support geen `appearance:none;` en moet ik `-webkit-` gebruiken, maar ik had ze vanaf het begin in mijn code toegevoegd, dus het werkte zonder problemen zoals het hoort.
+- Ik heb van mijn collega geleerd dat Safari support geen `appearance:none;` en moet ik `-webkit-` gebruiken, maar ik had ze vanaf het begin in mijn code toegevoegd, dus het werkte zonder problemen zoals het hoort.
 
 ```
 appearance: none;
@@ -152,32 +154,61 @@ appearance: none;
 -moz-appearance: none;
 ```
 
-Ik vind het raar, maar Safari pakt sommige stijlen fout zoals de Reset achtergrond kleur. Hij pakt de hover state en de normaale niet.
+- Ik vind het raar, maar Safari pakt sommige stijlen fout zoals de Reset achtergrond kleur. Hij pakt de hover state en de normaale niet.
 
 <img src="./readmeImages/safari3.png" alt="safari test 3">
 <img src="./readmeImages/safari4.png" alt="safari test 4">
 
 *Fix?*
 - Stijlen fout
-  - Ik gebruik geen macbooks of iphone dus ik vind het moelijk om het probleem te begrijben, daarom ik kan niet oplossing nu vinden.
+  - Ik gebruik geen macbooks dus ik vind het moelijk om het probleem te begrijben, daarom ik kan niet oplossing nu vinden.
 
 ### 4. Samsung Internet
-<img src="./readmeImages/.png" alt="">
+
+- Technisch werkt de site zonder problemen zoals het hoort.
+- Zoals Safari pakt hij sommige stijlen fout zoals de Reset achtergrond kleur na op het drukken. Hij pakt de hover state en de normaale niet.
+
+<img src="./readmeImages/samsungInt.png" alt="samsung internet test 1">
+<img src="./readmeImages/samsungInt2.png" alt="samsung internet test 2">
 
 ### 5. UC Browser
 <img src="./readmeImages/.png" alt="">
 
 ### 6. Android
-<img src="./readmeImages/.png" alt="">
+
+- Technisch werkt de site zonder problemen zoals het hoort.
+- Zoals Safari en Samsung Internet pakt hij sommige stijlen fout zoals de Reset achtergrond kleur na op het drukken. Hij pakt de hover state en de normaale niet.
+
+<img src="./readmeImages/Android1.png" alt="Android chrome test">
+<img src="./readmeImages/Android2.png" alt="Android chrome test2">
+<img src="./readmeImages/Android3.png" alt="Android chrome test3">
+
+- Stijlen fout
+  - Ik vind het moelijk om het probleem te begrijben, daarom ik kan niet oplossing nu vinden.
 
 ### 7. iphone
-<img src="./readmeImages/.png" alt="">
 
+- Technisch werkt de site zonder problemen zoals het hoort.
+- Hij pakt Alles goed, maar bigenen met de derde section hij maakt de bevegen raar zoals `display:none;` en `display:block;` i.p.v `transform` met `visibility`
+
+<img src="./readmeImages/iphone.png" alt="iphone test">
+
+*Fix?*
+- Stijlen fout
+  - Ik gebruik geen macbooks dus ik vind het moelijk om het probleem te begrijben, daarom ik kan niet oplossing nu vinden.
 
 ## Na Submiten
 
-<img src="./readmeImages/.png" alt="">
+Ik heb geen technische code geschreven om de ingevulde gegevens op te slaan en vervolgens naar de servers te sturen. De gebruiker wordt echter verondersteld een pagina te krijgen die lijkt op deze prototype, waarop wordt vermeld dat de submit succesvol was, dat de gebruiker de mogelijkheid heeft om een ​​pdf-kopie te verkrijgen en ook zijn gegevens opnieuw te bekijken.
+
+De website moet de `value` van elke `input` halen en deze opslaan in een json-bestand en vervolgens de json verzenden waar alle json-bestanden worden gecombineerd tot één json-bestand.
+
+<img src="./readmeImages/submiten.png" alt="submiten prototype voorbeeld">
 
 ## Wat zou ik anders doen!
+
 - Ik zou een introductie pagina maken met een korte inleiding over de enquête.
-- 
+- Kleurenpalet kiezen, die minder moeite met kleurcontrast heeft.
+
+---
+### Ik heb dit project voor mijn derde jaar school minor gemaakt.
