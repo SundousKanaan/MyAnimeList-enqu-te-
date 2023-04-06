@@ -140,7 +140,26 @@ appearance: none;
 <img src="./readmeImages/firefox2.png" alt="fire fox test 2">
 
 ### 3. Safari
-<img src="./readmeImages/.png" alt="">
+Technisch werkt de site zonder problemen zoals het hoort.
+<img src="./readmeImages/safari1.png" alt="safari test 1">
+<img src="./readmeImages/safari2.png" alt="safari test 2">
+
+Ik heb van mijn collega geleerd dat Safari support geen `appearance:none;` en moet ik `-webkit-` gebruiken, maar ik had ze vanaf het begin in mijn code toegevoegd, dus het werkte zonder problemen zoals het hoort.
+
+```
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+```
+
+Ik vind het raar, maar Safari pakt sommige stijlen fout zoals de Reset achtergrond kleur. Hij pakt de hover state en de normaale niet.
+
+<img src="./readmeImages/safari3.png" alt="safari test 3">
+<img src="./readmeImages/safari4.png" alt="safari test 4">
+
+*Fix?*
+- Stijlen fout
+  - Ik gebruik geen macbooks of iphone dus ik vind het moelijk om het probleem te begrijben, daarom ik kan niet oplossing nu vinden.
 
 ### 4. Samsung Internet
 <img src="./readmeImages/.png" alt="">
