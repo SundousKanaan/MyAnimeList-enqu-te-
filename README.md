@@ -106,6 +106,8 @@ Het was interessant om een ​​schermlezer uit te proberen. Waar de secties va
 ### 1. Chrome
 De site is gebouwd met behulp van de Chrome-browser, dus het werkt zoals het hoort zonder problemen.
 
+<img src="./readmeImages/js.png" alt="de website op chrome">
+
 ### 2. Fire Fox
 - De Fire Fox support geen `:has()` selectors dus de notetie verschijnt in het pagina.
 ```
