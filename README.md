@@ -122,13 +122,20 @@ appearance: none;
 -moz-appearance: none;
 ```
 
+- En hij pakt geen `span::after` van mijn input feedbacks
+
 *Fix?*
 - :has()
-  -Gebruik jQuery, een populaire JavaScript-bibliotheek, die de :has()-selector ondersteunt.
+  - Gebruik jQuery, een populaire JavaScript-bibliotheek, die de :has()-selector ondersteunt?
 - main auto class add event
   - class in de html te gebruiken?
+- input feedbacks
+  - de input check door de Javascript en de feedbaak toevoegen?
+- checkboxes met :has()
+  - fieldset:valied/invalid check
 
 <img src="./readmeImages/firefox.png" alt="fire fox test">
+<img src="./readmeImages/firefox2.png" alt="fire fox test 2">
 
 ### 3. Safari
 <img src="./readmeImages/.png" alt="">
