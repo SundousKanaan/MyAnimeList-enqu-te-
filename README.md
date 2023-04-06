@@ -172,7 +172,25 @@ appearance: none;
 <img src="./readmeImages/samsungInt2.png" alt="samsung internet test 2">
 
 ### 5. UC Browser
-<img src="./readmeImages/.png" alt="">
+
+- Hij support geen JavaScript, dus de gebruiker kan niet de form submiten.
+- Hij support geen `:has()` selectors, dus de gebruiker kan niet de volgende vraag hebben, want de `checkbox` gaat niet verschijnen.
+- Hij support geen `localStorage`, dus de gebruiker kan niet later weer verder gaan met waar hij was gebleven.
+- Hij support geen `::after` dus de feedback van de inputs kan niet verschijnen.
+- Hij werkt met mijn stijlen in andere manier dan normaal, zoals de header stijling.
+- Hij support geen `media queries` dus hij kan niet `@media (prefers-color-scheme: dark)` gebruiken.
+
+<img src="./readmeImages/UCbrowser.png" alt="UC browser test">
+
+*Fix?*
+- Stijlen fout
+  - `fieldset:valid/invalid` check om de `next question` checkbox te verschijnen.
+- LocalStorage 
+  - cookies proberen? maar de browser support geen js dus ik vinden niet logiesch om dit te fixen, als de form kan niet submiten.
+- ::after
+ - Support text schrijven om de gebruiker te vertellen hoe moet hij de input goed invulen van de eerste keer.
+- Dark mode
+- Kleurenpalet gebruiken die is goed in de twee modes.
 
 ### 6. Android
 
@@ -183,6 +201,7 @@ appearance: none;
 <img src="./readmeImages/Android2.png" alt="Android chrome test2">
 <img src="./readmeImages/Android3.png" alt="Android chrome test3">
 
+*fix?*
 - Stijlen fout
   - Ik vind het moelijk om het probleem te begrijben, daarom ik kan niet oplossing nu vinden.
 
